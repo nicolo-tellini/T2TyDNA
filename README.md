@@ -1,6 +1,12 @@
 # sunp
 simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 
+# workflow
+
+    cd .../samtools-1.21 # Within the unpacked release directory
+    ./configure
+    make
+
 # Dependecies 
 The following tools can be installed via conda (recommended)
 - Filtlong v0.2.1
