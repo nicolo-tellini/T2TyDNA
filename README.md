@@ -2,8 +2,7 @@
 simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 
 # Dependecies 
-# The following tools can be installed via conda (recommended)
-# precontig (read filtering and selection 60X coverage)
+## The following tools can be installed via conda (recommended)
 - Filtlong v0.2.1
 - NanoPlot 1.44.1
 - Flye 2.9.5-b1801
@@ -20,7 +19,6 @@ simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 - telofinder
 - ntLink v1.3.11
 - mumandco_v3.8
-- 
 # R packages 
 - seqinr
 - data.table
