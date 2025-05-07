@@ -19,6 +19,7 @@ The following tools can be installed via conda (recommended)
 - telofinder
 - ntLink v1.3.11
 - mumandco_v3.8
+- hifiasm 0.25.0-r726
 # R packages 
 - seqinr
 - data.table
