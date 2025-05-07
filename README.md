@@ -2,7 +2,7 @@
 simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 
 # Dependecies 
-## The following tools can be installed via conda (recommended)
+The following tools can be installed via conda (recommended)
 - Filtlong v0.2.1
 - NanoPlot 1.44.1
 - Flye 2.9.5-b1801
