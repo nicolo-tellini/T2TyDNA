@@ -8,6 +8,7 @@ simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 2) `medaka consensus`
 3) one round correction with Illumina reads `bwa-pilon`
 `scaffolding2` performs the scaffolding in reference-free mode with `ntLink`.
+
 Centromere identification, sequence reorientation and visual inspection of the alignment against a reference genome.  
 `QUAST`, `nucmer` and `BUSCO` assess the final assemblies' quality and completeness. 
 Finally, `telofinder` detects the number of terminal (and eventually internal) telomeric regions while `MUM&CO` recovers structural variants from pairwise comparison with a reference genome. 
