@@ -37,3 +37,5 @@ The following tools can be installed via conda (recommended)
 - seqinr
 - data.table
 - ggplot2
+- viridis
+- ggExtra
