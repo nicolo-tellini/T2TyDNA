@@ -7,7 +7,8 @@ simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/intropipeline?color=yellow&style=plastic)](https://github.com/nicolo-tellini/sunp/graphs/commit-activity)
 
 ## Description
-To be used for R10 nano-hq only 
+To be used with R10 nano-hq and Illuminia paired end only.
+If you use older chemistry and single end illumina you need to correct the steps accrodingly to adjust the pipeline to your needs.   
 
 
 ## Workflow
