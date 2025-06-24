@@ -41,7 +41,7 @@ This requires manual curation.
 :octocat: :
   
 ```sh
-git clone --recursive https://github.com/nicolo-tellini/intropipeline.git
+git clone --recursive https://github.com/nicolo-tellini/sunp.git
 ```
 
 ## Content
@@ -51,17 +51,14 @@ git clone --recursive https://github.com/nicolo-tellini/intropipeline.git
 ```{bash}
 .
 ├── rep
-│   ├── Ann
-│   └── Asm
-├── runner.sh
+│    └── README
 ├── scr
 └── seq
 
-5 directories 1 file
+3 directories 
 ```
 
-- ```rep``` : repository with assemblies, annotations and pre-computed marker table,</br>
-- ```runner.sh``` : the script you edit and run,</br>
+- ```rep``` : repository with ref. assembly and annotations (see ScRapDB),</br>
 - ```scr``` : scripts,</br>
 - ```seq``` : put the FASTQs files here,</br>
 
@@ -73,9 +70,7 @@ git clone --recursive https://github.com/nicolo-tellini/intropipeline.git
 
 ### About the fastqs 
 
-Move the FASTQs inside ```./seq/```
-
-Paired-end FASTQs data **must** be gziped and suffixed with **.R1.fastq.gz** and **.R2.fastq.gz**.
+Paired-end FASTQs data **must** be gziped and suffixed as **.fastq.gz** (ont) and **._1.fastq.gz** and **._2.fastq.gz** (Illumina).
 
 ### Default 
 
