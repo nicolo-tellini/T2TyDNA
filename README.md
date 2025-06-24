@@ -1,8 +1,17 @@
-# sunp
+# Sunp
 simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 To be used for R10 nano-hq only 
-# workflow
 
+[![Licence](https://img.shields.io/github/license/nicolo-tellini/intropipeline?style=plastic)](https://github.com/nicolo-tellini/intropipeline/blob/main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/nicolo-tellini/intropipeline?style=plastic)](https://github.com/nicolo-tellini/intropipeline/releases/tag/v.1.0.0)
+[![release date](https://img.shields.io/github/release-date/nicolo-tellini/intropipeline?color=violet&style=plastic)](https://github.com/nicolo-tellini/intropipeline/releases/tag/v.1.0.0)
+[![commit](https://img.shields.io/github/last-commit/nicolo-tellini/intropipeline?color=yellow&style=plastic)](https://github.com/nicolo-tellini/intropipeline/graphs/commit-activity)
+
+## Description
+
+
+
+## Workflow
 
 `initiate` defines and creates necessary directories. `precontig` anticipates the assembly phase filtering the reads according to specified parameters [default: minimum length 10 kb and 30X coverage]. `contig` and  `contig4` perform de novo assembling with `Flye` and `hifiasm`, respectively. Once assembled, `seqkit` removes unwanted white spaces while `QUAST` and `BUSCO` assess the raw assembly's quality and completeness. `assessment_after_contings` run `MUMmer` against the reference genome in `rep` dir, this is an intermeidiate control step. `Polishing` runs the raw assembly polishing according to the following scheme: 
 1) one round correction with ONT reads `minimap2-racon`
@@ -27,6 +36,104 @@ In case of artifact the long reads will show:
 </p>
 
 This requires manual curation.
+
+## Download
+ 
+:octocat: :
+  
+```sh
+git clone --recursive https://github.com/nicolo-tellini/intropipeline.git
+```
+
+## Content
+
+:open_file_folder: :
+
+```{bash}
+.
+├── rep
+│   ├── Ann
+│   └── Asm
+├── runner.sh
+├── scr
+└── seq
+
+5 directories 1 file
+```
+
+- ```rep``` : repository with assemblies, annotations and pre-computed marker table,</br>
+- ```runner.sh``` : the script you edit and run,</br>
+- ```scr``` : scripts,</br>
+- ```seq``` : put the FASTQs files here,</br>
+
+### Before starting 
+
+``` gzip -d ./rep/mrktab.gz ```
+
+``` gzip -d ./rep/Asm/*gz```
+
+### About the fastqs 
+
+Move the FASTQs inside ```./seq/```
+
+Paired-end FASTQs data **must** be gziped and suffixed with **.R1.fastq.gz** and **.R2.fastq.gz**.
+
+### Default 
+
+```./scr/bwa.sh``` uses 2 thread for sample (n.samples = 2).
+
+```./scr/samtools_markers.sh``` uses 1 thread for sample (n.samples = 4).
+
+```./scr/gem.sh``` uses 2 threads.
+
+```./scr/freec.sh``` uses 4 threads.
+
+these values can be changed editing the scripts.
+
+### How to run
+
+Edit ```runner.sh``` :page_with_curl: 
+
+```{bash}
+#!/bin/bash
+
+#####################
+### user settings ###
+#####################
+
+## S. paradoxus reference assembly
+
+ref2Label="CBS432" ## choose the Spar assembly you think better fit the origin of your samples
+
+## short labels (used to name file)
+
+ref2="EU" ## choose a short name for Spar
+
+# STEP 1
+fastqQC="yes" ## fastqc control (required) ("yes","no" or "-" the last is skip)
+
+# STEP 2
+shortReadMapping="yes" ## ("yes","no")
+
+# STEP 3
+mrkgeno="yes" ## ("yes","no")
+
+# STEP 4
+cnv="yes" ## ("yes","no")
+
+# STEP 5
+intro="yes" ## ("yes","no")
+
+#####################
+### settings' end ###
+#####################
+```
+
+Run ```runner.sh``` :runner: 
+
+```{bash}
+nohup bash runner.sh &
+```
 
 # Dependencies 
 The following tools can be installed via conda (recommended)
