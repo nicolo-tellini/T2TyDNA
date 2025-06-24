@@ -21,7 +21,7 @@ In order to assess and deal with artefact the pipeline run `backmapping` and `an
 3) strong read clipping.
 
 <p align="center">
-  <img src="https://github.com/nicolo-tellini/introspect/blob/loaded/img/logo2.png" alt="Sublime's custom image"/>
+  <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ont"/>
 </p>
 
 
