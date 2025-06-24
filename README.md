@@ -20,6 +20,10 @@ In order to assess and deal with artefact the pipeline run `backmapping` and `an
 2) drastic coverage drop
 3) strong read clipping.
 
+<p align="center">
+  <img src="https://github.com/nicolo-tellini/introspect/blob/loaded/img/logo2.png" alt="Sublime's custom image"/>
+</p>
+
 
 A summary is generated at the end of the run. This can be used to choose the assembly that best fits the proposal of the project.
 
