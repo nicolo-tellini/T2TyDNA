@@ -10,8 +10,7 @@ simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 To be used with R10 nano-hq and Illuminia paired end only.
 If you use older chemistry and single end illumina you need to correct the steps accrodingly to adjust the pipeline to your needs.
 This repo is intended to be used for 1) reproducibility 2) running new strains for which R10 seq and Illumina PE reads are available. NO changes will be done to adjust particular user cases.   
-the annotation step uses eggNog, this relies on a local database not included in the pipeline which need manual dowload `download_eggnog_data.py --data_dir $HOME/eggnog_db`, the pipeline expect to find `eggnog_db` in your `$HOME`, if this is not the path to your  `eggnog_db` dir consider change the variable inside `config`.
-Because of the 
+The annotation step uses eggNog, this relies on a local database not included in the pipeline which need manual dowload `download_eggnog_data.py --data_dir $HOME/eggnog_db`, the pipeline expect to find `eggnog_db` in your `$HOME`, if this is not the path to your  `eggnog_db` dir consider change the variable inside `config`.
 Please, if open and issue upload the log dir.  
 A docker version is available. 
 
