@@ -8,12 +8,27 @@ simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
 
 
 ## Description
-To be used with R10 nano-hq and Illuminia paired end only.
-If you use older chemistry and single end illumina you need to correct the steps accrodingly to adjust the pipeline to your needs.
-This repo is intended to be used for 1) reproducibility 2) running new strains for which R10 seq and Illumina PE reads are available. NO changes will be done to adjust particular user cases.   
-The annotation step uses eggNog, this relies on a local database not included in the pipeline which need manual dowload `download_eggnog_data.py --data_dir $HOME/eggnog_db`, the pipeline expect to find `eggnog_db` in your `$HOME`, if this is not the path to your  `eggnog_db` dir consider change the variable inside `config`.
-Please, if open and issue upload the log dir.  
-A docker version is available. 
+This pipeline is designed for hybrid assemblies using **Oxford Nanopore R10.4 high-quality reads** (nano-HQ) and **Illumina paired-end (PE) reads** only.  
+If you are working with older Nanopore chemistries or single-end Illumina data, you will need to modify the workflow accordingly. These use cases are **not supported** by default.
+
+### Purpose
+
+This repository is intended for:
+
+1. Ensuring **reproducibility** of hybrid genome assembly and annotation workflows.
+2. Running **new strains** for which both R10.4 and Illumina PE data are available.
+
+> ⚠️ **Note**: This pipeline is provided as-is. It will **not** be adapted for individual or legacy use cases.
+
+---
+
+### Annotation Step
+
+The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
+To set it up manually:
+
+```bash
+download_eggnog_data.py --data_dir $HOME/eggnog_db
 
 ## Workflow
 
