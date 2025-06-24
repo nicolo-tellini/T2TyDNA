@@ -15,7 +15,9 @@ To be used for R10 nano-hq only
 Visual inspection of the alignment against a reference genome. 
 Mulitple CEN on the same contig are artifacts and results in double named chromosomes such as `IV_XIII`.
 `assessment_after_scaffolding` performs a last `MUMmer` against the reference genome structure assessment.
-In order to assess and deal with artefact the pipeline run `backmapping` and `annotation`. The former maps the filtered long reads back to the de novo assemblies generated, while annotation is a quick way to identify and annotate functional genes which aims to give an overview of genes distribution across the assembly (!!! please note that the purpose of this step is not a coemprihensive whole-genome annotation). In case of artifact the long reads will show: 
+In order to assess and deal with artefact the pipeline run `backmapping` and `annotation`. The former maps the filtered long reads back to the de novo assemblies generated, while annotation is a quick way to identify and annotate functional genes which aims to give an overview of genes distribution across the assembly (!!! please note that the purpose of this step is not a coemprihensive whole-genome annotation). 
+
+In case of artifact the long reads will show: 
 1) local accumuation of unexpected SNPs,
 2) drastic coverage drop
 3) strong read clipping.
@@ -24,8 +26,7 @@ In order to assess and deal with artefact the pipeline run `backmapping` and `an
   <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ont"/>
 </p>
 
-
-A summary is generated at the end of the run. This can be used to choose the assembly that best fits the proposal of the project.
+This requires manual curation.
 
 # Dependencies 
 The following tools can be installed via conda (recommended)
