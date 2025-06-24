@@ -42,29 +42,73 @@ If you encounter problems, please open an issue and include the full contents of
 
 ## Workflow
 
-`initiate` defines and creates necessary directories. `precontig` anticipates the assembly phase filtering the reads according to specified parameters [default: minimum length 10 kb and 30X coverage]. `contig` and  `contig4` perform de novo assembling with `Flye` and `hifiasm`, respectively. Once assembled, `seqkit` removes unwanted white spaces while `QUAST` and `BUSCO` assess the raw assembly's quality and completeness. `assessment_after_contings` run `MUMmer` against the reference genome in `rep` dir, this is an intermeidiate control step. `Polishing` runs the raw assembly polishing according to the following scheme: 
-1) one round correction with ONT reads `minimap2-racon`
-2) `medaka consensus`
-3) one round correction with Illumina reads `bwa-pilon`
+The pipeline consists of multiple sequential modules tailored for hybrid genome assembly, polishing, quality control, and basic annotation. Below is an overview of each step:
 
-`scaffolding2` performs the scaffolding in reference-free mode with `ntLink` while `telofinder` detects the number of terminal (and eventually internal) telomeric regions.
- while `MUM&CO` recovers structural variants from pairwise comparison with a reference genome.
-`assign_cent` extract CEN from the reference genome annotation and receover them from the de novo assebly. The presence of the CEN on a contig determine the chromosomes naming and order (`reorderscaffolds`). 
-Visual inspection of the alignment against a reference genome. 
-Mulitple CEN on the same contig are artifacts and results in double named chromosomes such as `IV_XIII`.
-`assessment_after_scaffolding` performs a last `MUMmer` against the reference genome structure assessment.
-In order to assess and deal with artefact the pipeline run `backmapping` and `annotation`. The former maps the filtered long reads back to the de novo assemblies generated, while annotation is a quick way to identify and annotate functional genes which aims to give an overview of genes distribution across the assembly (!!! please note that the purpose of this step is not a coemprihensive whole-genome annotation). 
+### 1. Initialization & Pre-processing
 
-In case of artifact the long reads will show: 
-1) local accumuation of unexpected SNPs,
-2) drastic coverage drop
-3) strong read clipping.
+- **`initiate`**: Sets up the directory structure and required files.
+- **`precontig`**: Filters long reads prior to assembly, based on user-defined thresholds  
+  *(default: minimum read length = 10 kb, target coverage = 30×)*.
+
+### 2. Assembly
+
+- **`contig`**: Performs de novo assembly using **Flye**.
+- **`contig4`**: Alternative assembly with **hifiasm**.
+- **`seqkit`**: Removes unwanted whitespace characters from assemblies.
+- **`QUAST`** and **`BUSCO`**: Evaluate assembly quality and gene completeness.
+
+### 3. Intermediate Assessment
+
+- **`assessment_after_contigs`**: Aligns the draft assembly to a reference genome using **MUMmer**  
+  *(reference genome must be placed in the `rep/` directory)*.
+
+### 4. Polishing
+
+A three-step polishing process:
+
+1. **`minimap2` + `racon`**: One round of correction with ONT reads.
+2. **`medaka`**: Generates high-quality consensus.
+3. **`bwa` + `pilon`**: One round of correction using Illumina reads.
+
+### 5. Scaffolding & Telomere Detection
+
+- **`scaffolding2`**: Reference-free scaffolding with **ntLink**.
+- **`telofinder`**: Detects telomeric repeats (both terminal and internal).
+
+### 6. Structural Variant Recovery & Centromere Assignment
+
+- **`MUM&CO`**: Detects structural variants via pairwise alignment with the reference genome.
+- **`assign_cent`**: Extracts centromere positions from the reference annotation and maps them to the new assembly.
+- **`reorderscaffolds`**: Names and orders scaffolds based on centromere positions.
+
+> If multiple centromeres are found on the same contig (e.g., `IV_XIII`), this likely indicates an assembly artifact requiring manual inspection.
+
+### 7. Final Assessment
+
+- **`assessment_after_scaffolding`**: Final structural comparison against the reference using **MUMmer**.
+
+### 8. Backmapping & Annotation
+
+- **`backmapping`**: Maps filtered ONT reads back to the polished assembly. Useful to identify structural anomalies or coverage issues.
+- **`annotation`**: Fast functional annotation with **eggNOG-mapper** for gene content overview.  
+  > ⚠️ **Note**: This is not intended to be a comprehensive genome annotation.
+
+### Artifact Detection
+
+Manual curation is necessary if the following patterns appear:
+
+1. Local accumulation of unexpected SNPs  
+2. Abrupt coverage drops  
+3. Extensive soft/hard read clipping
 
 <p align="center">
-  <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ont"/>
+  <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
 </p>
 
-This requires manual curation.
+---
+
+This pipeline is modular and flexible, but assumes high-quality data from R10.4 ONT and Illumina PE. Adjustments for other technologies must be made manually.
+
 
 ## Download
  
