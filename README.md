@@ -29,6 +29,16 @@ To set it up manually:
 
 ```bash
 download_eggnog_data.py --data_dir $HOME/eggnog_db
+```
+The pipeline expects to find the eggNOG database in:
+```bash
+$HOME/eggnog_db
+```
+If your database is located elsewhere, update the relevant variable in the config file accordingly.
+
+Issues & Support
+
+If you encounter problems, please open an issue and include the full contents of the logs directory.
 
 ## Workflow
 
