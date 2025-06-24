@@ -62,71 +62,41 @@ git clone --recursive https://github.com/nicolo-tellini/sunp.git
 - ```scr``` : scripts,</br>
 - ```seq``` : put the FASTQs files here,</br>
 
-### Before starting 
-
-``` gzip -d ./rep/mrktab.gz ```
-
-``` gzip -d ./rep/Asm/*gz```
-
 ### About the fastqs 
 
-Paired-end FASTQs data **must** be gziped and suffixed as **.fastq.gz** (ont) and **._1.fastq.gz** and **._2.fastq.gz** (Illumina).
-
-### Default 
-
-```./scr/bwa.sh``` uses 2 thread for sample (n.samples = 2).
-
-```./scr/samtools_markers.sh``` uses 1 thread for sample (n.samples = 4).
-
-```./scr/gem.sh``` uses 2 threads.
-
-```./scr/freec.sh``` uses 4 threads.
-
-these values can be changed editing the scripts.
+Paired-end FASTQs data **must** be gziped and suffixed as sample**.fastq.gz** (ont) and sample**_1.fastq.gz** and sample**_2.fastq.gz** (Illumina).
 
 ### How to run
 
-Edit ```runner.sh``` :page_with_curl: 
+Edit USER VARIABLE in the ```./scr/config``` :page_with_curl: 
 
 ```{bash}
-#!/bin/bash
+###########################################################
+#                   CONFIGURATION FILE                    #
+#                                                         #
+# This configuration file sets parameters for sample      #
+# processing and analysis. Modify these values according  #
+# to your project's requirements.                         #
+#                                                         #
+#                                			  #
+# Contact me at nicolo.tellini.2@gmail.com		  #
+###########################################################
 
-#####################
-### user settings ###
-#####################
+##########################################################
+#		     USER VARIABLE			 #
+##########################################################
 
-## S. paradoxus reference assembly
-
-ref2Label="CBS432" ## choose the Spar assembly you think better fit the origin of your samples
-
-## short labels (used to name file)
-
-ref2="EU" ## choose a short name for Spar
-
-# STEP 1
-fastqQC="yes" ## fastqc control (required) ("yes","no" or "-" the last is skip)
-
-# STEP 2
-shortReadMapping="yes" ## ("yes","no")
-
-# STEP 3
-mrkgeno="yes" ## ("yes","no")
-
-# STEP 4
-cnv="yes" ## ("yes","no")
-
-# STEP 5
-intro="yes" ## ("yes","no")
-
-#####################
-### settings' end ###
-#####################
+     		 
+nt=8 # Number of threads
+inds=yS881 # Sample name
+ref_genome=SGDref.asm01.HP0.nuclear_genome.tidy.fa # Name of the reference genome file
+ref_ann=SGDref.asm01.HP0.nuclear_genome.tidy.gff3 # Name of the annotation file
 ```
 
 Run ```runner.sh``` :runner: 
 
 ```{bash}
-nohup bash runner.sh &
+bash runner.sh &
 ```
 
 # Dependencies 
