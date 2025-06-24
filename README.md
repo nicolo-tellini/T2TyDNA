@@ -173,26 +173,48 @@ Run ```runner.sh``` :runner:
 bash runner.sh &
 ```
 
-# Dependencies 
-The following tools can be installed via conda (recommended)
-- Filtlong v0.2.1
-- NanoPlot 1.44.1
-- Flye 2.9.5-b1801
-- seqkit v2.10.0
-- QUAST v5.3.0
-- BUSCO 5.8.2
-- minimap2 2.29-r1283
-- racon 1.5.0
-- medaka 2.0.1
-- bwa 0.7.19-r1273
-- samtools 1.21
-- Pilon version 1.24
-- ragtag v2.1.0
-- telofinder
-- ntLink v1.3.11
-- mumandco_v3.8
-- hifiasm 0.25.0-r726
-# R packages 
+## Dependencies
+
+The pipeline relies on a set of established bioinformatics tools. **Conda** is the recommended method for installation, ensuring reproducibility and ease of dependency management.
+
+Below is the list of required tools and their tested versions:
+
+| Tool         | Version         | Installation Source |
+|--------------|------------------|----------------------|
+| Filtlong     | v0.2.1           | `bioconda`           |
+| NanoPlot     | v1.44.1          | `bioconda`           |
+| Flye         | v2.9.5-b1801     | `bioconda`           |
+| seqkit       | v2.10.0          | `bioconda`           |
+| QUAST        | v5.3.0           | `bioconda`           |
+| BUSCO        | v5.8.2           | `bioconda`           |
+| minimap2     | v2.29-r1283      | `bioconda`           |
+| racon        | v1.5.0           | `bioconda`           |
+| medaka       | v2.0.1           | `bioconda`           |
+| BWA          | v0.7.19-r1273    | `bioconda`           |
+| Samtools     | v1.21            | `bioconda`           |
+| Pilon        | v1.24            | `bioconda`           |
+| RagTag       | v2.1.0           | `bioconda`           |
+| TeloFinder   | *(custom script)*| see `scripts/`       |
+| ntLink       | v1.3.11          | `bioconda`           |
+| MUM&CO       | v3.8             | GitHub (manual)      |
+| Hifiasm      | v0.25.0-r726     | `bioconda`           |
+
+### Recommended Environment
+
+We suggest creating a dedicated conda environment:
+
+```bash
+conda create -n sunp_env python=3.10
+conda activate sunp_env
+
+# Install dependencies
+conda install -c bioconda -c conda-forge \
+    filtlong nanoplot flye seqkit quast busco minimap2 racon medaka \
+    bwa samtools pilon ragtag ntlink hifiasm
+```
+
+<details> <summary>📦 <strong>R Package Dependencies</strong> (click to expand)</summary>
+ 
 - seqinr
 - data.table
 - ggplot2
