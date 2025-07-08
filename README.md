@@ -182,22 +182,34 @@ Below is the list of required tools and their tested versions:
 | Tool         | Version         | Installation Source |
 |--------------|------------------|----------------------|
 | Filtlong     | v0.2.1           | `bioconda`           |
+| Python       | v3.10             | `default`            |
+| Pytorch       | v2.3             | `default`            |
+| numpy       |              | `default`            |
+| h5py       |              | `default`            |
+| mappy       |              | `default`            |
 | NanoPlot     | v1.44.1          | `bioconda`           |
-| Flye         | v2.9.5-b1801     | `bioconda`           |
+| Augustus       | v3.5.0             | `bioconda`            |
+| gffread       | v0.12.7             | `bioconda`            |
+| Eggnog-mapper       | v2.1.13             | `bioconda`            |
+| Flye         | v2.9.6     | `bioconda`           |
 | seqkit       | v2.10.0          | `bioconda`           |
 | QUAST        | v5.3.0           | `bioconda`           |
 | BUSCO        | v5.8.2           | `bioconda`           |
-| minimap2     | v2.29-r1283      | `bioconda`           |
+| minimap2     | v2.29      | `bioconda`           |
 | racon        | v1.5.0           | `bioconda`           |
 | medaka       | v2.0.1           | `bioconda`           |
-| BWA          | v0.7.19-r1273    | `bioconda`           |
+| BWA          | v0.7.19    | `bioconda`           |
 | Samtools     | v1.21            | `bioconda`           |
 | Pilon        | v1.24            | `bioconda`           |
 | RagTag       | v2.1.0           | `bioconda`           |
 | TeloFinder   | *(custom script)*| see `scripts/`       |
 | ntLink       | v1.3.11          | `bioconda`           |
-| MUM&CO       | v3.8             | GitHub (manual)      |
-| Hifiasm      | v0.25.0-r726     | `bioconda`           |
+| MUMmer4      | v4.0.1             | `bioconda`      |
+| Hifiasm      | v0.25.0     | `bioconda`           |
+| Pybedtools       | v0.12.0             | `default`            |
+| r-base       | 4.3             | `default`            |
+| r-essentials       |              | `default`            |
+| pip       |              | `default`            |
 
 ### Recommended Environment
 
