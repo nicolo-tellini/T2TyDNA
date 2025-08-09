@@ -123,7 +123,8 @@ git clone --recursive https://github.com/nicolo-tellini/sunp.git
 
 ### About the fastqs 
 
-Paired-end FASTQs data **must** be gziped and suffixed as sample**.fastq.gz** (ont) and sample**_1.fastq.gz** and sample**_2.fastq.gz** (Illumina).
+FASTQs data **must** be gziped and suffixed as sample**.fastq.gz** (ont).
+FASTQs are located inside seq dir. 
 
 ### How to run
 
