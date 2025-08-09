@@ -1,5 +1,5 @@
-# Sunp
-simplified unified nanopore pipeline aka sunp (Saccharomyces ONT T2T assembly)
+# T2TyDNA
+Telomere-to-Telomere (T2T) Yeast De Novo Assembly
 
 
 [![Licence](https://img.shields.io/github/license/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/blob/main/LICENSE)
