@@ -20,50 +20,42 @@ This repository is intended for:
 
 ## Workflow
 
-The pipeline consists of multiple sequential modules tailored for hybrid genome assembly, polishing, quality control, and basic annotation. Below is an overview of each step:
+The pipeline consists of multiple sequential modules to generate a T2T genome assembly, polishing, quality control, telomere length estimation, ORFs identification and functional annotation. 
+Below is an overview of each step:
 
 ### 1. Initialization & Pre-processing
 
 - **`initiate`**: Sets up the directory structure and required files.
-- **`precontig`**: Filters long reads prior to assembly, based on user-defined thresholds  
-  *(default: minimum read length = 10 kb, target coverage = 30×)*.
+- **`precontig`**: Filters long reads before assembly, based on user-defined thresholds  
+  *(default: minimum read length = 10 kb,  average read quality 15, target coverage = 50×)*.
 
 ### 2. Assembly
 
 - **`contig`**: Performs de novo assembly using **Flye**.
-- **`contig4`**: Alternative assembly with **hifiasm**.
-- **`seqkit`**: Removes unwanted whitespace characters from assemblies.
 - **`QUAST`** and **`BUSCO`**: Evaluate assembly quality and gene completeness.
+- - **`mash`** and **`MUMmer`**
 
 ### 3. Intermediate Assessment
 
-- **`assessment_after_contigs`**: Aligns the draft assembly to a reference genome using **MUMmer**  
-  *(reference genome must be placed in the `rep/` directory)*.
+- **`assessment_after_contigs`** (**`mash`** and **`MUMmer`**): Aligns the draft assembly to a reference genome using **MUMmer**  
+  *(reference genomes aree placed in the `rep/` directory and automatically selected)*.
 
 ### 4. Polishing
 
 A three-step polishing process:
 
-1. **`minimap2` + `racon`**: One round of correction with ONT reads.
-2. **`medaka`**: Generates high-quality consensus.
-3. **`bwa` + `pilon`**: One round of correction using Illumina reads.
-
-### 5. Scaffolding & Telomere Detection
-
-- **`scaffolding2`**: Reference-free scaffolding with **ntLink**.
-- **`telofinder`**: Detects telomeric repeats (both terminal and internal).
-
-### 6. Structural Variant Recovery & Centromere Assignment
-
-- **`MUM&CO`**: Detects structural variants via pairwise alignment with the reference genome.
+- **`minimap2` + `racon`**: One round of correction with ONT reads.
+- **`medaka`**: Generates high-quality consensus (one round).
 - **`assign_cent`**: Extracts centromere positions from the reference annotation and maps them to the new assembly.
-- **`reorderscaffolds`**: Names and orders scaffolds based on centromere positions.
+-  **`reorderscaffolds`**: Names and orders contigs based on centromere positions.
 
 > If multiple centromeres are found on the same contig (e.g., `IV_XIII`), this likely indicates an assembly artifact requiring manual inspection.
 
-### 7. Final Assessment
+### 5. Telomere Length Estimation
 
-- **`assessment_after_scaffolding`**: Final structural comparison against the reference using **MUMmer**.
+- **`backmapping`**: Filtered ONT reads are mapped back to the de novo assembled genome.
+- **`samtools`**: Extraction reads mapping at the beginning and end of the chromosome (those covering a rage of 20kb)
+- **`telofinder`**: Detects telomeric repeats from the reads (Only terminal singnals are mantained).
 
 ### 8. Backmapping & Annotation
 
@@ -91,7 +83,7 @@ If you encounter problems, please open an issue and include the full contents of
 
 ### Artifact Detection
 
-Manual curation is necessary if the following patterns appear:
+Manual curation is necessary if the alignmewnt shows the following patterns:
 
 1. Local accumulation of unexpected SNPs  
 2. Abrupt coverage drops  
@@ -102,9 +94,6 @@ Manual curation is necessary if the following patterns appear:
 </p>
 
 ---
-
-This pipeline is modular and flexible, but assumes high-quality data from R10.4 ONT and Illumina PE. Adjustments for other technologies must be made manually.
-
 
 ## Download
  
