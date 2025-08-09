@@ -1,7 +1,7 @@
 # T2TyDNA
 Telomere-to-Telomere (T2T) Yeast De Novo Assembly
 <p align="center">
-  <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
+  <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/logot2tydna.png" alt="logo pipe"/>
 </p>
 [![Licence](https://img.shields.io/github/license/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/v/release/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/releases)
