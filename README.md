@@ -1,6 +1,8 @@
 # T2TyDNA
 Telomere-to-Telomere (T2T) Yeast De Novo Assembly
-
+<p align="center">
+  <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
+</p>
 [![Licence](https://img.shields.io/github/license/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/v/release/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/releases)
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/sunp?color=yellow&style=plastic)](https://github.com/nicolo-tellini/sunp/graphs/commit-activity)
@@ -61,7 +63,8 @@ A three-step polishing process:
 ### 8. Backmapping & Annotation
 
 - **`backmapping`**: Maps filtered ONT reads back to the polished assembly. Useful to identify structural anomalies or coverage issues.
-- **`annotation`**: Fast functional annotation with **eggNOG-mapper** for gene content overview.  
+- **`annotation`**: Fast functional annotation with **eggNOG-mapper** for gene content overview.
+  
   > ⚠️ **Note**: This is not intended to be a comprehensive genome annotation.
 
 ### Annotation Step
@@ -78,7 +81,7 @@ $HOME/eggnog_db
 ```
 If your database is located elsewhere, update the relevant variable in the config file accordingly.
 
-Issues & Support
+### Issues & Support
 
 If you encounter problems, please open an issue and include the full contents of the logs directory.
 
