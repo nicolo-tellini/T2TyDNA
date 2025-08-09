@@ -11,13 +11,10 @@ If you are working with older Nanopore chemistries, you will need to modify the 
 These use cases are **not supported** by default.
 
 ### Purpose
-
 This repository is intended for:
-
-1. Ensuring **reproducibility** of hybrid genome assembly and annotation workflows.
-2. Running **new strains** for which both R10.4 and Illumina PE data are available.
-
-> ⚠️ **Note**: This pipeline is provided as-is. It will **not** be adapted for individual or legacy use cases.
+1. Ensuring **reproducibility** of genome assembly and annotation workflows.
+2. Running **new strains** for which both R10.4 are available.
+> ⚠️ **Note**: This pipeline is provided as-is. It will **not** be adapted for individual cases.
 
 ---
 
