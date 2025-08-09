@@ -49,13 +49,13 @@ A three-step polishing process:
 - **`assign_cent`**: Extracts centromere positions from the reference annotation and maps them to the new assembly.
 -  **`reorderscaffolds`**: Names and orders contigs based on centromere positions.
 
-> If multiple centromeres are found on the same contig (e.g., `IV_XIII`), this likely indicates an assembly artifact requiring manual inspection.
+> If multiple centromeres are found on the same contig (e.g., `IV_XIII`), this likely indicates an assembly artefact requiring manual inspection.
 
 ### 5. Telomere Length Estimation
 
 - **`backmapping`**: Filtered ONT reads are mapped back to the de novo assembled genome.
-- **`samtools`**: Extraction reads mapping at the beginning and end of the chromosome (those covering a rage of 20kb)
-- **`telofinder`**: Detects telomeric repeats from the reads (Only terminal singnals are mantained).
+- **`samtools`**: Extraction of reads mapping at the beginning and end of the chromosome (those covering a range of 20kb)
+- **`telofinder`**: Detects telomeric repeats from the reads (Only terminal signals are maintained).
 
 ### 8. Backmapping & Annotation
 
@@ -81,9 +81,9 @@ Issues & Support
 
 If you encounter problems, please open an issue and include the full contents of the logs directory.
 
-### Artifact Detection
+### Artefact Detection
 
-Manual curation is necessary if the alignmewnt shows the following patterns:
+Manual curation is necessary if the alignment shows the following patterns:
 
 1. Local accumulation of unexpected SNPs  
 2. Abrupt coverage drops  
