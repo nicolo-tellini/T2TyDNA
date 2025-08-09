@@ -1,15 +1,14 @@
 # T2TyDNA
 Telomere-to-Telomere (T2T) Yeast De Novo Assembly
 
-
 [![Licence](https://img.shields.io/github/license/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/v/release/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/releases)
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/sunp?color=yellow&style=plastic)](https://github.com/nicolo-tellini/sunp/graphs/commit-activity)
 
-
 ## Description
-This pipeline is designed for assemblies using **Oxford Nanopore R10.4 high-quality reads** (**Illumina paired-end (PE) reads** are optional).  
-If you are working with older Nanopore chemistries or single-end Illumina data, you will need to modify the workflow accordingly. These use cases are **not supported** by default.
+This pipeline is designed for assemblies using **Oxford Nanopore R10.4 high-quality reads**.  
+If you are working with older Nanopore chemistries, you will need to modify the workflow accordingly. 
+These use cases are **not supported** by default.
 
 ### Purpose
 
