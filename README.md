@@ -169,7 +169,7 @@ conda create -n yeast_t2t python=3.10 -y
 conda activate yeast_t2t
 ```
 
-The tools below can be installed as follow:
+The tools below can be installed as follows:
 
 ```sh
 conda install -y -c conda-forge -c bioconda \
@@ -204,7 +204,7 @@ conda install -y -c conda-forge -c bioconda \
     pip \
     2>&1 | tee conda_install.log
 ```
-> ⚠️ TeloFinder need to be installed following the instruction at https://github.com/GillesFischerSorbonne/telofinder
+> ⚠️ TeloFinder need to be installed following the instructions at (Telofinder Documentation)[https://telofinder.readthedocs.io/en/latest/#installation]
 
 Below is the list of required tools and their tested versions:
 
