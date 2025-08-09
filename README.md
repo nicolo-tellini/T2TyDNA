@@ -14,6 +14,7 @@ These use cases are **not supported** by default.
 This repository is intended for:
 1. Ensuring **reproducibility** of genome assembly and annotation workflows.
 2. Running **new strains** for which both R10.4 are available.
+   
 > ⚠️ **Note**: This pipeline is provided as-is. It will **not** be adapted for individual cases.
 
 ---
@@ -203,6 +204,7 @@ conda install -y -c conda-forge -c bioconda \
     pip \
     2>&1 | tee conda_install.log
 ```
+> ⚠️ TeloFinder need to be installed following the instruction at https://github.com/GillesFischerSorbonne/telofinder
 
 Below is the list of required tools and their tested versions:
 
