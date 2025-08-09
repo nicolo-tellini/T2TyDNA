@@ -138,19 +138,18 @@ Edit USER VARIABLE in the ```./scr/config``` :page_with_curl:
 # processing and analysis. Modify these values according  #
 # to your project's requirements.                         #
 #                                                         #
-#                                			  #
-# Contact me at nicolo.tellini.2@gmail.com		  #
+#                                			                      #
+# Contact me at nicolo.tellini.2@gmail.com		              #
 ###########################################################
 
 ##########################################################
-#		     USER VARIABLE			 #
+#		                  USER VARIABLE			                    #
 ##########################################################
 
      		 
 nt=8 # Number of threads
 inds=yS881 # Sample name
-ref_genome=SGDref.asm01.HP0.nuclear_genome.tidy.fa # Name of the reference genome file
-ref_ann=SGDref.asm01.HP0.nuclear_genome.tidy.gff3 # Name of the annotation file
+
 ```
 
 Run ```runner.sh``` :runner: 
@@ -161,7 +160,49 @@ bash runner.sh &
 
 ## Dependencies
 
-The pipeline relies on a set of established bioinformatics tools. **Conda** is the recommended method for installation, ensuring reproducibility and ease of dependency management.
+The pipeline relies on a set of established bioinformatics tools. **Conda** is the recommended method for installation.
+The installation environment is named **t2tydna**. 
+
+```sh
+conda create -n yeast_t2t python=3.10 -y
+conda activate yeast_t2t
+```
+
+The tools below can be installed as follow:
+
+```sh
+conda install -y -c conda-forge -c bioconda \
+    filtlong=0.2.1 \
+    pytorch=2.3 \
+    numpy \
+    h5py \
+    mappy \
+    nanoplot=1.44.1 \
+    augustus=3.5.0 \
+    gffread=0.12.7 \
+    eggnog-mapper=2.1.13 \
+    flye=2.9.6 \
+    seqkit=2.10.0 \
+    quast=5.3.0 \
+    busco=5.8.2 \
+    minimap2=2.29 \
+    racon=1.5.0 \
+    medaka=2.0.1 \
+    bwa=0.7.19 \
+    samtools=1.21 \
+    ragtag=2.1.0 \
+    mummer4=4.0.1 \
+    pybedtools=0.12.0 \
+    r-base=4.3 \
+    r-essentials \
+    r-seqinr \
+    r-data.table \
+    r-ggplot2 \
+    r-viridis \
+    r-ggextra \
+    pip \
+    2>&1 | tee conda_install.log
+```
 
 Below is the list of required tools and their tested versions:
 
@@ -186,35 +227,10 @@ Below is the list of required tools and their tested versions:
 | medaka       | v2.0.1           | `bioconda`           |
 | BWA          | v0.7.19    | `bioconda`           |
 | Samtools     | v1.21            | `bioconda`           |
-| Pilon        | v1.24            | `bioconda`           |
 | RagTag       | v2.1.0           | `bioconda`           |
 | TeloFinder   | *(custom script)*| see `scripts/`       |
-| ntLink       | v1.3.11          | `bioconda`           |
 | MUMmer4      | v4.0.1             | `bioconda`      |
-| Hifiasm      | v0.25.0     | `bioconda`           |
 | Pybedtools       | v0.12.0             | `default`            |
 | r-base       | 4.3             | `default`            |
 | r-essentials       |              | `default`            |
 | pip       |              | `default`            |
-
-### Recommended Environment
-
-We suggest creating a dedicated conda environment:
-
-```bash
-conda create -n sunp_env python=3.10
-conda activate sunp_env
-
-# Install dependencies
-conda install -c bioconda -c conda-forge \
-    filtlong nanoplot flye seqkit quast busco minimap2 racon medaka \
-    bwa samtools pilon ragtag ntlink hifiasm
-```
-
-<details> <summary>📦 <strong>R Package Dependencies</strong> (click to expand)</summary>
- 
-- seqinr
-- data.table
-- ggplot2
-- viridis
-- ggExtra
