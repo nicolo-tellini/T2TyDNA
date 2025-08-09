@@ -8,7 +8,7 @@ Telomere-to-Telomere (T2T) Yeast De Novo Assembly
 
 
 ## Description
-This pipeline is designed for hybrid assemblies using **Oxford Nanopore R10.4 high-quality reads** (nano-HQ) and **Illumina paired-end (PE) reads** only.  
+This pipeline is designed for assemblies using **Oxford Nanopore R10.4 high-quality reads** (**Illumina paired-end (PE) reads** are optional).  
 If you are working with older Nanopore chemistries or single-end Illumina data, you will need to modify the workflow accordingly. These use cases are **not supported** by default.
 
 ### Purpose
