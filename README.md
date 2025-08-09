@@ -18,24 +18,6 @@ This repository is intended for:
 
 ---
 
-### Annotation Step
-
-The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
-To set it up manually:
-
-```bash
-download_eggnog_data.py --data_dir $HOME/eggnog_db
-```
-The pipeline expects to find the eggNOG database in:
-```bash
-$HOME/eggnog_db
-```
-If your database is located elsewhere, update the relevant variable in the config file accordingly.
-
-Issues & Support
-
-If you encounter problems, please open an issue and include the full contents of the logs directory.
-
 ## Workflow
 
 The pipeline consists of multiple sequential modules tailored for hybrid genome assembly, polishing, quality control, and basic annotation. Below is an overview of each step:
@@ -88,6 +70,24 @@ A three-step polishing process:
 - **`backmapping`**: Maps filtered ONT reads back to the polished assembly. Useful to identify structural anomalies or coverage issues.
 - **`annotation`**: Fast functional annotation with **eggNOG-mapper** for gene content overview.  
   > ⚠️ **Note**: This is not intended to be a comprehensive genome annotation.
+
+### Annotation Step
+
+The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
+To set it up manually:
+
+```bash
+download_eggnog_data.py --data_dir $HOME/eggnog_db
+```
+The pipeline expects to find the eggNOG database in:
+```bash
+$HOME/eggnog_db
+```
+If your database is located elsewhere, update the relevant variable in the config file accordingly.
+
+Issues & Support
+
+If you encounter problems, please open an issue and include the full contents of the logs directory.
 
 ### Artifact Detection
 
