@@ -40,7 +40,7 @@ Below is an overview of each step:
   <details>
   <summary> Q len plot </summary>
     <p align="center">
-      <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/t2tyDNAworkflowWhiteTXT.png" alt="logo pipe" width="70%"/>
+      <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/qlenplot.png" alt="logo pipe" width="50%"/>
     </p>
 </details>
 
