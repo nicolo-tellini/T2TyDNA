@@ -37,6 +37,13 @@ Below is an overview of each step:
 - **`precontig`**: Filters long reads before assembly, based on user-defined thresholds  
   *(default: minimum read length = 10 kb,  average read quality 15, target coverage = 50×)*.
 
+  <details>
+  <summary> Q len plot </summary>
+<p align="center">
+  <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/t2tyDNAworkflowWhiteTXT.png" alt="logo pipe" width="70%"/>
+</p>
+</details>
+
 ### 2. Assembly
 
 - **`contig`**: Performs de novo assembly using **Flye**.
