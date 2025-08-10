@@ -7,7 +7,7 @@
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/sunp?color=yellow&style=plastic)](https://github.com/nicolo-tellini/sunp/graphs/commit-activity)
 
 ## Description
-This pipeline is designed for assemblies using **Oxford Nanopore R10.4 high-quality reads**.  
+This pipeline is designed for assembling **Oxford Nanopore R10.4 high-quality reads**.  
 If you are working with older Nanopore chemistries, you will need to modify the workflow accordingly. 
 These use cases are **not supported** by default.
 
