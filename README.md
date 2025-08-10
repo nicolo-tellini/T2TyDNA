@@ -23,7 +23,7 @@ This repository is intended for:
 ## Workflow
 
 <p align="center">
-  <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/logot2tydna.png" alt="logo pipe" width="30%"/>
+  <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/t2tyDNAworkflowWhiteTXT.png" alt="logo pipe" width="70%"/>
 </p>
 
 The pipeline consists of multiple sequential modules to generate a T2T genome assembly, polishing, quality control, telomere length estimation, ORFs identification and functional annotation. 
