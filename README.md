@@ -78,8 +78,9 @@ A three-step polishing process:
 
 ## Artefact Detection
 
-Mummer plots help detect artefacts
+Mummer plots help detect artefacts. Manual curation is necessary if the alignment shows the following patterns:
 
+1. Telomers embedded in central chrs positions
   <details>
   <summary> Artefact from MUMmer </summary>
     <p align="center">
@@ -87,11 +88,9 @@ Mummer plots help detect artefacts
     </p>
 </details>
 
-Manual curation is necessary if the alignment shows the following patterns:
-
-1. Local accumulation of unexpected SNPs  
-2. Abrupt coverage drops  
-3. Extensive soft/hard read clipping
+2. Local accumulation of unexpected SNPs  
+3. Abrupt coverage drops  
+4. Extensive soft/hard read clipping
 
   <details>
   <summary> Artefact from mapping </summary>
