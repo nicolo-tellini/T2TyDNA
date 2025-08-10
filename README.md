@@ -67,6 +67,13 @@ A three-step polishing process:
 - **`samtools`**: Extraction of reads mapping at the beginning and end of the chromosome (those covering a range of 20kb)
 - **`telofinder`**: Detects telomeric repeats from the reads (Only terminal signals are maintained).
 
+<details>
+  <summary> Q len plot </summary>
+  <p align="center">
+    <img src="" alt="logo pipe" width="50%"/>
+  </p>
+</details>
+
 ### 6. Backmapping & Annotation
 
 - **`backmapping`**: Maps filtered ONT reads back to the polished assembly. Useful to identify structural anomalies or coverage issues.
