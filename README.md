@@ -165,12 +165,12 @@ Edit USER VARIABLE in the ```./scr/config``` :page_with_curl:
 # processing and analysis. Modify these values according  #
 # to your project's requirements.                         #
 #                                                         #
-#                                			                      #
-# Contact me at nicolo.tellini.2@gmail.com		              #
+#                                			                    #
+# Contact me at nicolo.tellini.2@gmail.com		            #
 ###########################################################
 
 ##########################################################
-#		                  USER VARIABLE			                    #
+#		                  USER VARIABLE			                 #
 ##########################################################
 
      		 
@@ -191,8 +191,8 @@ The pipeline relies on a set of established bioinformatics tools. **Conda** is t
 The installation environment is named **t2tydna**. 
 
 ```sh
-conda create -n yeast_t2t python=3.10 -y
-conda activate yeast_t2t
+conda create -n t2tydna python=3.10 -y
+conda activate t2tydna
 ```
 
 The tools below can be installed as follows:
