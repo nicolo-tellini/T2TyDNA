@@ -97,7 +97,7 @@ Mummer plots help detect artefacts
   <details>
   <summary> Artefact from MUMmer </summary>
     <p align="center">
-      <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
+      <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/artefact.png" alt="Artifact ONT" width="70%"/>
     </p>
 </details>
 
