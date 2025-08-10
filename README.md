@@ -23,11 +23,6 @@ This repository is intended for:
 ---
 
 ## Workflow
-
-<p align="center">
-  <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/t2tyDNAworkflowWhiteTXT.png" alt="logo pipe" width="70%"/>
-</p>
-
 The pipeline consists of multiple sequential modules to generate a T2T genome assembly, polishing, quality control, telomere length estimation, ORFs identification and functional annotation. 
 Below is an overview of each step:
 
@@ -72,7 +67,7 @@ A three-step polishing process:
 - **`samtools`**: Extraction of reads mapping at the beginning and end of the chromosome (those covering a range of 20kb)
 - **`telofinder`**: Detects telomeric repeats from the reads (Only terminal signals are maintained).
 
-### 8. Backmapping & Annotation
+### 6. Backmapping & Annotation
 
 - **`backmapping`**: Maps filtered ONT reads back to the polished assembly. Useful to identify structural anomalies or coverage issues.
 - **`annotation`**: Fast functional annotation with **eggNOG-mapper** for gene content overview.
@@ -93,11 +88,9 @@ $HOME/eggnog_db
 ```
 If your database is located elsewhere, update the relevant variable in the config file accordingly.
 
-### Issues & Support
+---
 
-If you encounter problems, please open an issue and include the full contents of the logs directory.
-
-### Artefact Detection
+## Artefact Detection
 
 Mummer plots help detect artefacts
 
@@ -120,6 +113,12 @@ Manual curation is necessary if the alignment shows the following patterns:
       <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
     </p>
 </details>
+
+---
+
+## Issues & Support
+
+If you encounter problems, please open an issue and include the full contents of the logs directory.
 
 ---
 
