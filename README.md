@@ -11,6 +11,8 @@ This pipeline is designed for assemblies using **Oxford Nanopore R10.4 high-qual
 If you are working with older Nanopore chemistries, you will need to modify the workflow accordingly. 
 These use cases are **not supported** by default.
 
+> ⚠️ **Note**: This repo has been built to be readable in a dark background
+
 ### Purpose
 This repository is intended for:
 1. Ensuring **reproducibility** of genome assembly and annotation workflows.
