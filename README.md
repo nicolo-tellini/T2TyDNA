@@ -9,12 +9,12 @@
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/sunp?color=yellow&style=plastic)](https://github.com/nicolo-tellini/sunp/graphs/commit-activity)
 
 ## Description
-This pipeline is designed for assembling Saccharomyces genomes starting from **Oxford Nanopore R10.4 high-quality reads**. If you are working with older Nanopore chemistries, you will need to modify the workflow accordingly. These use cases are **not supported** by default.
+This pipeline is optimized for genome assembly of **Saccharomyces** using Oxford Nanopore R10.4 high-quality reads. If your data come from older Nanopore chemistries, the workflow will require adjustments that are not supported by default.
 
 ### beyond *Saccharomyces*
-As long as **Oxford Nanopore R10.4 high-quality reads** are input, the pipeline can be run across yeasts. 
+The pipeline can also be applied to other yeast species, provided Oxford Nanopore R10.4 high-quality reads are used as input.
 
-> ⚠️ **Note**: More complex genomes require additional sequencing technology (PacBio Hifi, Hi-C, ONT ultralong). This pipeline is **not** recommended for these cases. 
+> ⚠️ **Note**: For larger or more complex genomes, additional sequencing technologies (e.g., PacBio HiFi, Hi-C, ONT ultralong) are recommended. This pipeline is not suited for such cases.
 
 ### Purpose
 This repository is intended for:
