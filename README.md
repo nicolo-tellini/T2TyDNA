@@ -113,7 +113,8 @@ Mummer plots help detect artefacts. Manual curation is necessary if the alignmen
 ## Issues & Support
 
 If you encounter problems, please open an issue and include the full contents of the logs directory.
-NO support is given for Windows OS, please read [here](https://towardsdatascience.com/why-do-bioinformaticians-avoid-using-windows-c5acb034f63c/)
+
+NO support is given for Windows OS, please read [here](https://towardsdatascience.com/why-do-bioinformaticians-avoid-using-windows-c5acb034f63c/).
 
 ---
 
