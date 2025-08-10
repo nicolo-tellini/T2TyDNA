@@ -2,7 +2,7 @@
   <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/logot2tydna.png" alt="logo pipe" width="30%"/>
 </p>
 
-THIS DIRECTORY IS UNDER CONSTRUCTION
+> ⚠️⚠️⚠️ THIS DIRECTORY IS UNDER CONSTRUCTION
 
 [![Licence](https://img.shields.io/github/license/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/v/release/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/sunp/releases)
@@ -13,13 +13,11 @@ This pipeline is designed for assembling **Oxford Nanopore R10.4 high-quality re
 If you are working with older Nanopore chemistries, you will need to modify the workflow accordingly. 
 These use cases are **not supported** by default.
 
-> ⚠️ **Note**: This repo has been built to be readable in a dark background
-
 ### Purpose
 This repository is intended for:
 1. Ensuring **reproducibility** of genome assembly and annotation workflows.
 2. Running **new strains** for which both R10.4 are available.
-   
+
 > ⚠️ **Note**: This pipeline is provided as-is. It will **not** be adapted for individual cases.
 
 ---
