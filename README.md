@@ -123,7 +123,7 @@ NO support is given for Windows OS, please read [here](https://towardsdatascienc
 :octocat: :
   
 ```sh
-git clone --recursive https://github.com/nicolo-tellini/sunp.git
+git clone --recursive https://github.com/nicolo-tellini/T2TyDNA.git
 ```
 
 ## Content
