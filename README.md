@@ -9,7 +9,7 @@
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/sunp?color=yellow&style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/graphs/commit-activity)
 
 ## Description
-This pipeline is optimized for genome assembly of **Saccharomyces** using Oxford Nanopore R10.4 reads. If your data comes from older Nanopore chemistries, the workflow will require adjustments that are not provided by default; see the section blablabla to adjust the pipeline according to your chemistry. The pipeline can also be applied to other yeast species; the scripts need to be adjusted to meet the features of the organism. See the section below to discover limits and possible applications **beyond Saccharomyces**
+This pipeline is optimized for genome assembly of **Saccharomyces** using Oxford Nanopore R10.4 reads. If your data comes from older Nanopore chemistries, the workflow will require adjustments that are not provided by default; see the section blablabla to adjust the pipeline according to your chemistry. The pipeline can also be applied to other yeast species; the scripts need to be adjusted to meet the features of the organism. See the section below to discover limits and possible applications **beyond Saccharomyces**.
 
 > ⚠️ **Note**: For larger or more complex genomes, additional sequencing technologies (e.g., PacBio HiFi, Hi-C, ONT ultralong) are recommended. This pipeline is not suited for such cases.
 
