@@ -1,4 +1,4 @@
-name: yeast_t2t
+name: t2tydna
 channels:
   - conda-forge
   - bioconda
