@@ -70,7 +70,7 @@ A three-step polishing process:
 <details>
   <summary> Q len plot </summary>
   <p align="center">
-    <img src="" alt="logo pipe" width="50%"/>
+    <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/tel_dist.png" alt="logo pipe" width="30%"/>
   </p>
 </details>
 
