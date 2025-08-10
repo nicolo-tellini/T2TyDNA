@@ -8,7 +8,7 @@ dependencies:
   - python=3.10
   - pip
 
-  # Machine learning / core libs
+  # core libs
   - pytorch=2.3
   - numpy
   - h5py
@@ -33,7 +33,7 @@ dependencies:
   - mummer4=4.0.1
   - pybedtools=0.12.0
 
-  # R base & essentials
+  # R base
   - r-base=4.3
   - r-essentials
 
