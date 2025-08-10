@@ -74,20 +74,6 @@ A three-step polishing process:
   
   > ⚠️ **Note**: This is not intended to be a comprehensive genome annotation.
 
-### Annotation Step
-
-The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
-To set it up manually:
-
-```bash
-download_eggnog_data.py --data_dir $HOME/eggnog_db
-```
-The pipeline expects to find the eggNOG database in:
-```bash
-$HOME/eggnog_db
-```
-If your database is located elsewhere, update the relevant variable in the config file accordingly.
-
 ---
 
 ## Artefact Detection
@@ -263,3 +249,17 @@ Below is the list of required tools and their tested versions:
 | r-base       | 4.3             | `default`            |
 | r-essentials       |              | `default`            |
 | pip       |              | `default`            |
+
+### Annotation Step
+
+The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
+To set it up manually:
+
+```bash
+download_eggnog_data.py --data_dir $HOME/eggnog_db
+```
+The pipeline expects to find the eggNOG database in:
+```bash
+$HOME/eggnog_db
+```
+If your database is located elsewhere, update the relevant variable in the config file accordingly.
