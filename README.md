@@ -230,7 +230,7 @@ conda install -y -c conda-forge -c bioconda \
     pip \
     2>&1 | tee conda_install.log
 ```
-> ⚠️ TeloFinder need to be installed following the instructions at (Telofinder Documentation)[https://telofinder.readthedocs.io/en/latest/#installation]
+> ⚠️ TeloFinder need to be installed following the instructions at [Telofinder Documentation](https://telofinder.readthedocs.io/en/latest/#installation)
 > Telofinder will be installed inside the t2tydna environment and will be activated at the right moment. 
 
 Below is the list of required tools and their tested versions:
