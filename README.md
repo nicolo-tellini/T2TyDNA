@@ -99,15 +99,27 @@ If you encounter problems, please open an issue and include the full contents of
 
 ### Artefact Detection
 
+Mummer plots help detect artefacts
+
+  <details>
+  <summary> Artefact from MUMmer </summary>
+    <p align="center">
+      <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
+    </p>
+</details>
+
 Manual curation is necessary if the alignment shows the following patterns:
 
 1. Local accumulation of unexpected SNPs  
 2. Abrupt coverage drops  
 3. Extensive soft/hard read clipping
 
-<p align="center">
-  <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
-</p>
+  <details>
+  <summary> Artefact from mapping </summary>
+    <p align="center">
+      <img src="https://github.com/nicolo-tellini/sunp/blob/main/artifact_eaxample.png" alt="Artifact ONT"/>
+    </p>
+</details>
 
 ---
 
