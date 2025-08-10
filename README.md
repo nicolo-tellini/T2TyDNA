@@ -99,6 +99,8 @@ Mummer plots help detect artefacts. Manual curation is necessary if the alignmen
     </p>
 </details>
 
+[TiGmint](https://github.com/bcgsc/tigmint) can support manual postprocessing.  
+
 ---
 
 ## Issues & Support
