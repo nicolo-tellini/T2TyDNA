@@ -68,7 +68,7 @@ A three-step polishing process:
 - **`telofinder`**: Detects telomeric repeats from the reads (Only terminal signals are maintained).
 
 <details>
-  <summary> Q len plot </summary>
+  <summary> TEL len plot </summary>
   <p align="center">
     <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/tel_dist.png" alt="logo pipe" width="30%"/>
   </p>
