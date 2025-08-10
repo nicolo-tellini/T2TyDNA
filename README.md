@@ -39,9 +39,9 @@ Below is an overview of each step:
 
   <details>
   <summary> Q len plot </summary>
-<p align="center">
-  <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/t2tyDNAworkflowWhiteTXT.png" alt="logo pipe" width="70%"/>
-</p>
+    <p align="center">
+      <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/t2tyDNAworkflowWhiteTXT.png" alt="logo pipe" width="70%"/>
+    </p>
 </details>
 
 ### 2. Assembly
