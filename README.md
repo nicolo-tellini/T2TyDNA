@@ -256,16 +256,17 @@ Below is the list of required tools and their tested versions:
 | numpy       |              | `default`            |
 | h5py       |              | `default`            |
 | mappy       |              | `default`            |
-| NanoPlot     | v1.44.1          | `bioconda`           |
+| NanoPlot     | v1.46.0          | `bioconda`           |
 | Augustus       | v3.5.0             | `bioconda`            |
 | gffread       | v0.12.7             | `bioconda`            |
 | Eggnog-mapper       | v2.1.13             | `bioconda`            |
+| Mash       | v2.3             | `conda-forge`            |
 | Flye         | v2.9.6     | `bioconda`           |
 | seqkit       | v2.10.0          | `bioconda`           |
 | QUAST        | v5.3.0           | `bioconda`           |
 | BUSCO        | v5.8.2           | `bioconda`           |
 | minimap2     | v2.29      | `bioconda`           |
-| racon        | v1.5.0           | `bioconda`           |
+| racon        | v1.4.20           | `bioconda`           |
 | medaka       | v2.0.1           | `bioconda`           |
 | BWA          | v0.7.19    | `bioconda`           |
 | Samtools     | v1.21            | `bioconda`           |
