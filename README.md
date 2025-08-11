@@ -161,17 +161,28 @@ Edit USER VARIABLE in the ```./scr/config``` :page_with_curl:
 # processing and analysis. Modify these values according  #
 # to your project's requirements.                         #
 #                                                         #
-#                                			                    #
-# Contact me at nicolo.tellini.2@gmail.com		            #
+#                                			  #
+# Contact me at nicolo.tellini.2@gmail.com		  #
 ###########################################################
 
 ##########################################################
-#		                  USER VARIABLE			                 #
+#		     USER VARIABLE			 #
 ##########################################################
 
      		 
 nt=8 # Number of threads
-inds=yS881 # Sample name
+
+inds=RIMPIAZZAMI # Sample name
+
+post_filtering_coverage=50 # target covegare for filtlong
+
+model="r1041_e82_400bps_sup_v4.3.0" # dorado model basecalling
+
+short_reads="no" # activate it if appropriate. this is not used for polishing.
+
+phasing="no" # activate it if appropriate
+
+eggdb=$HOME/eggnog_data
 
 ```
 
