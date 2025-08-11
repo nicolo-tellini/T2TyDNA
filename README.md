@@ -244,6 +244,7 @@ mamba install -y -c conda-forge -c bioconda \
     r-base=4.3 \
     r-essentials \
     r-seqinr \
+    r-R.utils \
     r-data.table \
     r-ggplot2 \
     r-viridis \
