@@ -1,0 +1,49 @@
+###########################################################
+#                   CONFIGURATION FILE                    #
+#                                                         #
+# This configuration file sets parameters for sample      #
+# processing and analysis. Modify these values according  #
+# to your project's requirements.                         #
+#                                                         #
+#                                			  #
+# Contact me at nicolo.tellini.2@gmail.com		  #
+###########################################################
+
+##########################################################
+#		     USER VARIABLE			 #
+##########################################################
+
+     		 
+nt=8 # Number of threads
+inds=yS832 # Sample name
+post_filtering_coverage=50 # target covegare for filtlong
+model="r1041_e82_400bps_sup_v4.3.0" # dorado model basecalling
+short_reads="no" # activate it if appropriate. this is not used for polishing.  
+phasing="no" # activate it if appropriate
+eggdb=$HOME/eggnog_data
+
+##########################################################
+#	    DO NOT CHANGE THE VARIABLE BELOW         	 #
+##########################################################
+
+basedir=$(dirname "$(pwd)")
+
+seqdir="$basedir/seq"
+
+tmpdir="$basedir/tmp"
+
+scfdir="$basedir/scf"
+
+logdir="$basedir/log" 
+
+repdir="$basedir/rep"
+
+errordir="$basedir/err"
+
+asmdir="$basedir/asm"
+
+anndir="$basedir/ann"
+
+mapdir="$basedir/map"
+
+telodir="$basedir/tlo"
