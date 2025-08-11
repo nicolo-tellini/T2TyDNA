@@ -234,6 +234,7 @@ mamba install -y -c conda-forge -c bioconda \
     minimap2=2.29 \
     racon=1.5.0 \
     medaka=2.0.1 \
+    chopper=0.10.0 \
     bwa=0.7.19 \
     samtools=1.21 \
     ragtag=2.1.0 \
