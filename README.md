@@ -277,6 +277,8 @@ Below is the list of required tools and their tested versions:
 | r-essentials       |              | `default`            |
 | pip       |              | `default`            |
 
+# TODO list
+
 ### Annotation Step
 
 The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
