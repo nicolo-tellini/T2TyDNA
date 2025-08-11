@@ -248,7 +248,8 @@ mamba install -y -c conda-forge -c bioconda \
 > ⚠️ TeloFinder need to be installed separately following the instructions at [Telofinder Documentation](https://telofinder.readthedocs.io/en/latest/#installation).
 > IMPORTANT: before running ```pip install .``` follow the correction here listed at [issue13](https://github.com/GillesFischerSorbonne/telofinder/issues/13#issuecomment-2124729333)
 
-
+<details>
+<summary> Tools list </summary>
 Below is the list of required tools and their tested versions:
 
 | Tool         | Version         | Installation Source |
@@ -280,6 +281,8 @@ Below is the list of required tools and their tested versions:
 | r-base       | 4.3             | `default`            |
 | r-essentials       |              | `default`            |
 | pip       |              | `default`            |
+
+</details>
 
 # TODO list
 
