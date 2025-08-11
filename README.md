@@ -225,14 +225,14 @@ mamba install -y -c conda-forge -c bioconda \
     quast=5.3.0 \
     busco=5.8.2 \
     minimap2=2.29 \
-    racon=1.4.20 \
+    racon \
     medaka=2.0.1 \
     chopper=0.10.0 \
     bwa=0.7.19 \
     samtools=1.21 \
     ragtag=2.1.0 \
     mummer4=4.0.1 \
-    pybedtools=0.12.0 \
+    pybedtools \
     mash=2.3 \
     r-base=4.3 \
     r-essentials \
