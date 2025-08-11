@@ -1,6 +1,0 @@
-This version implemented 
-- ragTag reorientation according to ref orientation for L and R telomeric regions
-- tel len dist estimates
-- coordinator for automatizatioin
-- the annotation is not currently included in the runner because timeconsuming but the script is in scr and can be included in the runner or run individually if this step is required
-- the coordinator cannot consider the illumina in this moment
