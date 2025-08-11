@@ -211,7 +211,7 @@ The installation environment is named **t2tydna**.
 
 ```sh
 mamba create -n t2tydna python=3.10 -y
-conda activate t2tydna
+mamba activate t2tydna
 ```
 
 The tools below can be installed as follows:
@@ -223,7 +223,7 @@ mamba install -y -c conda-forge -c bioconda \
     numpy \
     h5py \
     mappy \
-    nanoplot= 1.46.0 \
+    nanoplot=1.46.0 \
     augustus=3.5.0 \
     gffread=0.12.7 \
     eggnog-mapper=2.1.13 \
