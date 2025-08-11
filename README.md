@@ -21,7 +21,8 @@ This repository is intended for:
 > ⚠️ **Note**: This pipeline is provided as-is. It will **not** be adapted for individual cases.
 
 ---
-
+<details>
+<summary> Old workflow </summary>
 ## Workflow
 The pipeline consists of multiple sequential modules to generate a T2T genome assembly, polishing, quality control, telomere length estimation, ORFs identification and functional annotation. 
 Below is an overview of each step:
@@ -80,7 +81,7 @@ A three-step polishing process:
 - **`annotation`**: Fast functional annotation with **eggNOG-mapper** for gene content overview.
   
   > ⚠️ **Note**: This is not intended to be a comprehensive genome annotation.
-
+</details>
 ---
 
 ## Artefact Detection
