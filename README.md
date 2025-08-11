@@ -38,7 +38,7 @@ Below is an overview of each step:
     <p align="center">
       <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/qlenplot.png" alt="logo pipe" width="50%"/>
     </p>
-</details>
+  </details>
 
 ### 2. Assembly
 
@@ -81,7 +81,7 @@ A three-step polishing process:
 - **`annotation`**: Fast functional annotation with **eggNOG-mapper** for gene content overview.
   
   > ⚠️ **Note**: This is not intended to be a comprehensive genome annotation.
-</details>
+
 ---
 
 ## Artefact Detection
@@ -108,6 +108,8 @@ Mummer plots help detect artefacts. Manual curation is necessary if the alignmen
 </details>
 
 [TiGmint](https://github.com/bcgsc/tigmint) can support manual postprocessing, but it is not implemented in the pipeline as its use is case-specific. 
+
+</details>
 
 ---
 
