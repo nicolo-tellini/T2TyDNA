@@ -202,7 +202,7 @@ Copy environment.yml file to the local directory.
 mamba env create -f environment.yml
 mamba activate t2tydna
 ```
-> ⚠️ TeloFinder need to be installed inside the t2tydna env. following the instructions at [Telofinder Documentation](https://telofinder.readthedocs.io/en/latest/#installation)
+> ⚠️ TeloFinder need to be installed inside the t2tydna env. following the instructions at [Telofinder Documentation](https://telofinder.readthedocs.io/en/latest/#installation). IMPORTANT: before running pip install . follow the correction here listed at [issue13](https://github.com/GillesFischerSorbonne/telofinder/issues/13#issuecomment-2124729333)
 
 ### More details, debugging and upgrade
 
