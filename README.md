@@ -240,6 +240,7 @@ mamba install -y -c conda-forge -c bioconda \
     ragtag=2.1.0 \
     mummer4=4.0.1 \
     pybedtools=0.12.0 \
+    mash=2.3 \
     r-base=4.3 \
     r-essentials \
     r-seqinr \
