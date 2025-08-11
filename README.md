@@ -199,8 +199,8 @@ bash runner.sh &
 Copy environment.yml file to the local directory.
 
 ```sh
-conda env create -f environment.yml
-conda activate t2tydna
+mamba env create -f environment.yml
+mamba activate t2tydna
 ```
 > ⚠️ TeloFinder need to be installed inside the t2tydna env. following the instructions at [Telofinder Documentation](https://telofinder.readthedocs.io/en/latest/#installation)
 
@@ -210,14 +210,14 @@ The pipeline relies on a set of established bioinformatics tools.
 The installation environment is named **t2tydna**. 
 
 ```sh
-conda create -n t2tydna python=3.10 -y
+mamba create -n t2tydna python=3.10 -y
 conda activate t2tydna
 ```
 
 The tools below can be installed as follows:
 
 ```sh
-conda install -y -c conda-forge -c bioconda \
+mamba install -y -c conda-forge -c bioconda \
     filtlong=0.2.1 \
     pytorch=2.3 \
     numpy \
