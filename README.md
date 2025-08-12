@@ -330,3 +330,11 @@ The pipeline expects to find the eggNOG database in:
 $HOME/eggnog_db
 ```
 If your database is located elsewhere, update the relevant variable in the config file accordingly.
+
+### Additional
+- write results in a dedicated directory
+- run mummer after assigning the chrs names and orientaion not after flye raw
+- consider removing -l 200 flag from mummer
+- make more explicit ranges for filtering the reads and move to the config file
+- explain the limitation of flye in de novo assembling
+- 
