@@ -195,7 +195,17 @@ Run ```runner.sh``` :runner:
 bash runner.sh &
 
 ```
+Main results are in :
 
+tmp dir: 
+- '.flye.clean.fa' is the de novo assembled genome
+- '.flye.raw.pdf' contains MUMmer plot against the reference genome
+
+tlo dir: 
+- telofinder results plots (.pdf) and summary table (.summary.txt)
+
+ann:
+- annotation results
 
 ```{bash}
 .
