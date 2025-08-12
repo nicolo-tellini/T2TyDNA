@@ -193,6 +193,27 @@ Run ```runner.sh``` :runner:
 
 ```{bash}
 bash runner.sh &
+
+```
+
+
+```{bash}
+.
+├── OS3.backmap.fa -> /home/ntellini/proj/SGRP5/denovoassembliesont/sunp2/FKS1-assemblies/complete/OS3/tmp/ragtag_output/ragtag.scaffold.fasta
+├── OS3.backmap-ref.png
+├── OS3.cen-pos.flye.txt
+├── OS3.flye.clean.fa
+├── OS3.flye.clean.fa.fai
+├── OS3.flye.raw.fasta
+├── OS3.flye.raw.pdf
+├── OS3.medaka.flye
+├── OS3.medaka.flye.final.fasta -> /home/ntellini/proj/SGRP5/denovoassembliesont/sunp2/FKS1-assemblies/complete/OS3/tmp/OS3.medaka.flye/consensus.fasta
+├── OS3.racon_polished.flye.final.fasta
+├── OS3.sort.mash
+└── ragtag_output
+
+2 directories, 10 files
+
 ```
 
 ## Dependencies
