@@ -26,11 +26,11 @@ If you encounter problems, please open an issue and include the full contents of
 ### Installation (recommended)
 
 The pipeline relies on a set of established bioinformatics tools. 
-The installation environment is named **t2tydna**. 
+The installation environment is named **donatelo**. 
 
 ```sh
-mamba create -n t2tydna python=3.10 -y
-mamba activate t2tydna
+mamba create -n donatelo python=3.10 -y
+mamba activate donatelo
 ```
 
 The tools below can be installed as follows:
@@ -91,28 +91,8 @@ cd telofinder
 pip install .
 ```
 
-> By default telomere length estimates are disabled, you can activate it by changing the value of tel_len from "no" to "yes" in the ```./scr/config``` file.
-> Telofinder accumulates pybedtools files on the temp dir consider removing that files at the end of each run. 
+> Telofinder accumulates pybedtools files on the temp dir consider removing that files at the end of each run.
 
-> ⚠️ IMPORTANT: If you are not instered in genome phasing skip this step.
-
-```sh
-mamba create -n clair3
-
-mamba activate clair3
-
-mamba install clair3 -c bioconda -c conda-forge
-
-mamba deactivate
-
-mamba create -n hapcut2
-
-mamba activate hapcut2
-
-mamba install hapcut2 -c bioconda -c conda-forge
-
-mamba deactivate
-```
 ## Download
  
 :octocat: :
@@ -178,7 +158,7 @@ rounds=2 # rounds of long-read based polishing
 genome_size="12.5m"
 
 ```
-Be sure ```t2tydna``` env is active. 
+Be sure ```donatelo``` env is active. 
 
 Run ```runner.sh``` :runner: 
 
