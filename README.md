@@ -2,7 +2,7 @@
   <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/logot2tydna.png" alt="logo pipe" width="30%"/>
 </p>
 
-> ⚠️⚠️⚠️ THIS DIRECTORY IS UNDER CONSTRUCTION AND THE PIPELINE UNDER IMPROVEMENT AND OPTIMIZATION 
+> ⚠️⚠️⚠️ THIS IS A BRANCH OF T2TYDNA. THIS BRANCH WAS USED IN DONATELO PROJECT TO ESTIMATES TELOMER LENGTH DISTIBUTION ⚠️⚠️⚠️
 
 [![Licence](https://img.shields.io/github/license/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/v/release/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/releases)
