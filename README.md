@@ -6,7 +6,7 @@
 [![Release](https://img.shields.io/github/v/release/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/releases)
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/sunp?color=yellow&style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/graphs/commit-activity)
 
-> ⚠️ DONATELO is a branch of T2T-yDNA. The DONATELO project requires estimating telomere length distribution. ⚠️
+> ⚠️ You are in DONATELO. DONATELO is a branch of T2T-yDNA. The DONATELO project requires estimating telomere length distribution. ⚠️
 
 ## Description
 This pipeline is optimized for estimating the telomere length distribution of *Saccharomyces* strains evolved in the lab using Oxford Nanopore R10.4 reads.
