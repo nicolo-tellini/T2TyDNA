@@ -98,7 +98,7 @@ pip install .
 :octocat: :
   
 ```sh
-git clone --recursive https://github.com/nicolo-tellini/T2TyDNA.git
+git clone --branch donatelo https://github.com/nicolo-tellini/T2TyDNA.git
 ```
 
 ## Content
