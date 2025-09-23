@@ -10,7 +10,7 @@ cd $basedir/map
 
 mapping="$inds.flye.ont.srt.bam"
 
-seqs_fasta=$(grep ">" $basedir/tmp/"$inds.genome.fa" | sed 's+>++g' | tr '\n' ' ')
+seqs_fasta=$(grep ">" $basedir/tmp/"$inds.medaka.flye.ragtag.fa" | sed 's+>++g' | tr '\n' ' ')
 
 samtools idxstat $mapping | cut -f1-2 | awk '$2 >= 30000' > $inds".idxstat.30kblenmin.txt"
 
