@@ -31,23 +31,23 @@
 set -x 
 
 source ./config
-
+# create the directory tree
 /usr/bin/time -v bash "$basedir/scr/initialize.sh"
-
+# filter the fastqs according to Q and len
 /usr/bin/time -v bash "$basedir/scr/precontig.sh" >  "$basedir/log/precontig.log" 2> "$basedir/log/precontig.err"
-
+# Q ~ len plot
 /usr/bin/time -v Rscript "$basedir/scr/nanoplot_plot.r" "$basedir" "$inds" > "$basedir/log/nanoplot_plot.log" 2> "$basedir/log/nanoplot_plot.err"
-
+# contig with flye
 /usr/bin/time -v bash "$basedir/scr/contig.sh" $ont_type $genome_size > "$basedir/log/contig.log" 2> "$basedir/log/contig.err"
-
+# racon-medaka; medaka_consensus
 /usr/bin/time -v bash "$basedir/scr/polishing.sh" $rounds >  "$basedir/log/polishing.log" 2> "$basedir/log/polishing.err"
-
+# mash against ref inside rep
 /usr/bin/time -v bash "$basedir/scr/mash.sh" >  "$basedir/log/mash.log" 2> "$basedir/log/mash.err"
-
+# ragtag scaffolding against ref genome in rep
 /usr/bin/time -v bash "$basedir/scr/ragtag.sh" >  "$basedir/log/ragtag.log" 2> "$basedir/log/ragtag.err"
-
+# backmap longreads unfiltered against de novo assembled genome
 /usr/bin/time -v bash "$basedir/scr/backmap.sh" >  "$basedir/log/backmap.log" 2> "$basedir/log/backmap.err"
-
+# reads extraction from chromosome ends 
 /usr/bin/time -v bash "$basedir/scr/telomer_dist.sh" >  "$basedir/log/telomer_dist.log" 2> "$basedir/log/telomer_dist.err"
-
+# stats and plots of tel len dist 
 /usr/bin/time -v Rscript "$basedir/scr/telomer_dist_plot.r" "$telodir" "$inds" > "$basedir/log/telomer_dist_plot.log" 2> "$basedir/log/telomer_dist_plot.err"
