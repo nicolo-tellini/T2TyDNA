@@ -29,7 +29,7 @@ The pipeline relies on a set of established bioinformatics tools.
 The installation environment is named **donatelo**. 
 
 ```sh
-mamba create -n donatelo python=3.10 -y
+mamba create -n donatelo -c conda-forge -c bioconda python=3.10 -y 
 mamba activate donatelo
 ```
 
