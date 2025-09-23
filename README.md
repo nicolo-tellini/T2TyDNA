@@ -44,8 +44,6 @@ mamba install -y -c conda-forge -c bioconda \
     mappy \
     nanoplot=1.46.0 \
     augustus=3.5.0 \
-    gffread=0.12.7 \
-    eggnog-mapper=2.1.13 \
     flye=2.9.6 \
     seqkit=2.10.* \
     quast=5.3.0 \
@@ -56,7 +54,6 @@ mamba install -y -c conda-forge -c bioconda \
     chopper=0.10.0 \
     bwa=0.7.19 \
     samtools=1.21 \
-    repeatmasker=4.2.1 \
     mummer4=4.0.1 \
     pybedtools \
     emboss=6.6.0 \
