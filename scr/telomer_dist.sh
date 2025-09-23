@@ -6,6 +6,9 @@ source ./config
 
 source $(conda info --base)/etc/profile.d/conda.sh
 
+# Initialize mamba for this subshell
+eval "$(mamba shell hook --shell bash)"
+
 cd $basedir/map
 
 mapping="$inds.flye.ont.srt.bam"
