@@ -96,11 +96,6 @@ pip install poetry-core setuptools wheel
 pip install --no-build-isolation .
 ```
 
-> From the parental telofinder dir run:
-```
-pip install .
-```
-
 > Telofinder accumulates pybedtools files on the temp dir consider removing that files at the end of each run.
 
 ## Download
