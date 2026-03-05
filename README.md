@@ -29,7 +29,7 @@ If you encounter problems, please open an issue and include the full contents of
 > The installation environment is named **donatelo**. 
 
 ```sh
-mamba create -n donatelo -c conda-forge -c bioconda python=3.10 -y 
+mamba create -n donatelo -c conda-forge -c bioconda
 mamba activate donatelo
 ```
 
