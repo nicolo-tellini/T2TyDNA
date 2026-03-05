@@ -75,7 +75,13 @@ mamba install -y -c conda-forge -c bioconda \
 > ⚠️ IMPORTANT: TeloFinder need to be installed separately on a dirrente env following the instructions:
 
 ```
-mamba create -n telofinder python=3.10
+mamba create -n telofinder \
+  python=3.10 \
+  "numpy<2" \
+  pybedtools=0.9.1 \
+  bedtools \
+  pandas \
+  -c conda-forge -c bioconda
 
 mamba activate telofinder
 
@@ -83,7 +89,13 @@ git clone https://github.com/GillesFischerSorbonne/telofinder.git
 
 cd telofinder
 ```
-> Before running ```pip install .``` follow the correction here listed at [issue13](https://github.com/GillesFischerSorbonne/telofinder/issues/13#issuecomment-2124729333)
+> follow the correction here listed at [issue13](https://github.com/GillesFischerSorbonne/telofinder/issues/13#issuecomment-2124729333)
+
+```
+pip install poetry-core setuptools wheel
+pip install --no-build-isolation .
+```
+
 > From the parental telofinder dir run:
 ```
 pip install .
