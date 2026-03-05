@@ -25,15 +25,15 @@ If you encounter problems, please open an issue and include the full contents of
 
 ### Installation (recommended)
 
-The pipeline relies on a set of established bioinformatics tools. 
-The installation environment is named **donatelo**. 
+> The pipeline relies on a set of established bioinformatics tools. 
+> The installation environment is named **donatelo**. 
 
 ```sh
 mamba create -n donatelo -c conda-forge -c bioconda python=3.10 -y 
 mamba activate donatelo
 ```
 
-The tools below can be installed as follows:
+> The tools below can be installed as follows:
 
 ```sh
 mamba install -y -c conda-forge -c bioconda \
