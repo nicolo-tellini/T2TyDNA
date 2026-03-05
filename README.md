@@ -141,6 +141,7 @@ mamba install -y -c conda-forge -c bioconda \
     numpy \
     h5py \
     mappy \
+    "setuptools<70" \
     nanoplot=1.46.0 \
     augustus=3.5.0 \
     gffread=0.12.7 \
