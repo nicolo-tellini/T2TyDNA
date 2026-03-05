@@ -43,6 +43,7 @@ mamba install -y -c conda-forge -c bioconda \
     h5py \
     mappy \
     nanoplot=1.46.0 \
+    telofinder=2.32 \
     augustus=3.5.0 \
     flye=2.9.6 \
     seqkit=2.10.* \
