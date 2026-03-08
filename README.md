@@ -8,10 +8,13 @@
 
 > [!NOTE]
 > You are in **DONATELO**, a branch of **T2T-yDNA**.  
-> The DONATELO project aims to estimate the telomere length distribution using long-read sequencing data.
+> The DONATELO project aims to estimate the telomere length distribution, SVs (t., CNVs, repeats, large INDELs), SNPs accumulatig over time using long-read sequencing data. 
 
 ## Description
-This pipeline is optimized for estimating the telomere length distribution of *Saccharomyces* strains evolved in the lab using Oxford Nanopore R10.4 reads.
+This pipeline is optimized for the analysis of *Saccharomyces* strains evolved in the lab using Oxford Nanopore R10.4 reads.
+> [!NOTE]
+> This version of the pipeline start from a T2T assembly of the strain you are evolving under controlled environmental conditions.
+> If the parental strains are hybrids both the parental strains are used to assess variation indipendtly across both the assemblies. 
 
 ---
 
