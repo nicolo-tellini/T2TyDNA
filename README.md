@@ -128,53 +128,64 @@ The pipeline relies on a set of established bioinformatics tools.
 The installation environment is named **t2tydna**. 
 
 ```sh
-mamba create -n t2tydna python=3.10 -y
-mamba activate t2tydna
+mamba create -y -n t2tydna \
+  --override-channels \
+  --channel-priority flexible \
+  -c conda-forge -c bioconda \
+  python=3.11 \
+  "numpy<2" \
+  h5py \
+  mappy \
+  clair3=2.0.0 \
+  whatshap=2.8 \
+  minimap2=2.29 \
+  samtools=1.21 \
+  flye=2.9.6 \
+  racon=1.5.0 \
+  filtlong=0.2.1 \
+  chopper=0.10.0 \
+  nanoplot=1.46.0 \
+  seqkit=2.10.1 \
+  nanoplot=1.46.0 \
+  augustus=3.5.0 \
+  gffread=0.12.7 \
+  quast=5.3.0 \
+  busco=5.8.2 \
+  chopper=0.10.0 \
+  bwa=0.7.19 \
+  repeatmasker=4.2.1 \
+  emboss=6.6.0\
+  fasta3=36.3.8 \
+  mash=2.3 \
+  eggnog-mapper=2.1.13 \
+  r-base=4.3 \
+  r-essentials \
+  r-seqinr \
+  r-R.utils \
+  r-data.table \
+  r-ggplot2 \
+  r-viridis \
+  r-ggextra \
+  r-ggpubr 
 ```
-
-The tools below can be installed as follows:
+```sh
+  mamba create -y -n medaka-env \
+  --override-channels \
+  --channel-priority flexible \
+  -c conda-forge -c bioconda \
+  python=3.12 \
+  medaka=2.2.0
+```
 
 ```sh
-mamba install -y -c conda-forge -c bioconda \
-    filtlong=0.2.1 \
-    pytorch=2.3 \
-    numpy \
-    h5py \
-    mappy \
-    "setuptools<70" \
-    nanoplot=1.46.0 \
-    augustus=3.5.0 \
-    gffread=0.12.7 \
-    eggnog-mapper=2.1.13 \
-    flye=2.9.6 \
-    seqkit=2.10.* \
-    quast=5.3.0 \
-    busco=5.8.2 \
-    minimap2=2.29 \
-    racon=1.5.0 \
-    medaka=2.0.1 \
-    chopper=0.10.0 \
-    bwa=0.7.19 \
-    samtools=1.21 \
-    repeatmasker=4.2.1 \
-    mummer4=4.0.1 \
-    pybedtools \
-    emboss=6.6.0 \
-    seqkit=2.10.1 \
-    fasta3=36.3.8 \
-    mash=2.3 \
-    r-base=4.3 \
-    r-essentials \
-    r-seqinr \
-    r-R.utils \
-    r-data.table \
-    r-ggplot2 \
-    r-viridis \
-    r-ggextra \
-    r-ggpubr \
-    pip \
-    2>&1 | tee conda_install.log
+ mamba create -y -n mummer4 \
+  --override-channels \
+  --channel-priority flexible \
+  -c conda-forge -c bioconda \
+  gnuplot \
+  mummer4=4.0.1
 ```
+
 > ⚠️ IMPORTANT: If you are not instered in telomere length estimates skip this step.
 
 > TeloFinder need to be installed separately on a dirrente env following the instructions:
