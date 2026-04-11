@@ -125,8 +125,8 @@ NO support is given for Windows OS, please read [here](https://towardsdatascienc
 ### Installation (recommended)
 
 The pipeline relies on a set of established bioinformatics tools. 
-The installation environment is named **t2tydna**. 
 
+> INSTALL t2tydna environment
 ```sh
 mamba create -y -n t2tydna \
   --override-channels \
@@ -168,6 +168,7 @@ mamba create -y -n t2tydna \
   r-ggextra \
   r-ggpubr 
 ```
+> INSTALL medaka on a separate environment
 ```sh
   mamba create -y -n medaka-env \
   --override-channels \
@@ -176,7 +177,7 @@ mamba create -y -n t2tydna \
   python=3.12 \
   medaka=2.2.0
 ```
-
+> INSTALL mummer4 on a separate environment
 ```sh
  mamba create -y -n mummer4 \
   --override-channels \
@@ -185,6 +186,7 @@ mamba create -y -n t2tydna \
   gnuplot \
   mummer4=4.0.1
 ```
+> INSTALL telofinder on a separate environment
 ```sh
 mamba create -y -n telofinder \
   --override-channels \
@@ -204,12 +206,8 @@ pip install .
 
 conda deactivate
 ```
-> ⚠️ IMPORTANT: If you are not instered in genome phasing skip this step.
-
-### Annotation Step
-
-The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
-To set it up manually:
+> The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.
+> To set it up:
 
 ```bash
 mkdir -p $HOME/eggnog_db
