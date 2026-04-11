@@ -333,5 +333,6 @@ tlo :
 Please, if you use this pipeline or reuse part of it cite this repo, along with all the tools included. 
 
 # TODO list
+Add Whatshap for haplotape phasing.
 
 ### Additional
