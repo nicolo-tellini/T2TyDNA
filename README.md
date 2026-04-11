@@ -112,17 +112,7 @@ Mummer plots help detect artefacts. Manual curation is necessary if the alignmen
 
 ---
 
-## Issues & Support
-
-If you encounter problems, please open an issue and include the full contents of the logs directory.
-
-NO support is given for Windows OS, please read [here](https://towardsdatascience.com/why-do-bioinformaticians-avoid-using-windows-c5acb034f63c/).
-
----
-
-## Dependencies
-
-### Installation (recommended)
+## Installation
 
 The pipeline relies on a set of established bioinformatics tools. 
 
@@ -210,11 +200,15 @@ conda deactivate
 > To set it up:
 
 ```bash
+mamba activate t2tydna
+
 mkdir -p $HOME/eggnog_db
+
+sed -i 's|eggnogdb\.embl\.de|eggnog5.embl.de|g' "$(which download_eggnog_data.py)"
 
 download_eggnog_data.py --data_dir $HOME/eggnog_db
 ```
-The pipeline expects to find the eggNOG database in:
+> The pipeline expects to find the eggNOG database in:
 ```bash
 $HOME/eggnog_db
 ```
@@ -315,6 +309,12 @@ If you are interested in tel length estimates:
 
 tlo : 
 - telofinder results plots (.pdf) and summary table (.summary.txt)
+
+## Issues & Support
+
+If you encounter problems, please open an issue and include the full contents of the logs directory.
+
+NO support is given for Windows OS, please read [here](https://towardsdatascience.com/why-do-bioinformaticians-avoid-using-windows-c5acb034f63c/).
 
 # Citation
 
