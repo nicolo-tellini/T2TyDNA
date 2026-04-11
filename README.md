@@ -2,22 +2,16 @@
   <img src="https://github.com/nicolo-tellini/T2TyDNA/blob/main/logot2tydna.png" alt="logo pipe" width="30%"/>
 </p>
 
-> ⚠️⚠️⚠️ THIS DIRECTORY IS UNDER CONSTRUCTION AND THE PIPELINE UNDER IMPROVEMENT AND OPTIMIZATION 
-
 [![Licence](https://img.shields.io/github/license/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/v/release/nicolo-tellini/sunp?style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/releases)
 [![commit](https://img.shields.io/github/last-commit/nicolo-tellini/sunp?color=yellow&style=plastic)](https://github.com/nicolo-tellini/T2TyDNA/graphs/commit-activity)
 
 ## Description
-This pipeline is optimized for genome assembly of **Saccharomyces** using Oxford Nanopore R10.4 reads.
-
-> ⚠️ **Note**: For larger or more complex genomes, additional sequencing technologies (e.g., PacBio HiFi, Hi-C, ONT ultralong) are recommended. This pipeline is not suited for such cases.
+This pipeline is optimized for genome assembly of **Saccharomyces** using Oxford Nanopore R10.4 reads only.
 
 ### Purpose
 This repository is intended for de novo assembly of Saccharomyces strains for which (by default) R10.4 ONT are available.
-Older chemistries require installing the appropriate version of medaka (see Dependencies below), increasing the round of polishing up to 3 and, change flye settings in ```scr/config```.
-
-> ⚠️ **Note**: This pipeline is provided as-is. It will **not** be adapted for individual cases.
+Older chemistries require installing the appropriate version of medaka (see Dependencies below), increasing the round of polishing up to 3 and, changing flye settings in ```scr/config```.
 
 ---
 <details>
@@ -114,8 +108,6 @@ Mummer plots help detect artefacts. Manual curation is necessary if the alignmen
 
 ## Installation
 
-The pipeline relies on a set of established bioinformatics tools. 
-
 > INSTALL t2tydna environment
 ```sh
 mamba create -y -n t2tydna \
@@ -210,9 +202,8 @@ download_eggnog_data.py --data_dir $HOME/eggnog_db
 ```
 > The pipeline expects to find the eggNOG database in:
 ```bash
-$HOME/eggnog_db
+$HOME/eggnog_db (If your database is located elsewhere, update the relevant variable in the config file accordingly)
 ```
-If your database is located elsewhere, update the relevant variable in the config file accordingly.
 
 ## Download
  
@@ -305,10 +296,6 @@ out:
 3 files, 
 
 ```
-If you are interested in tel length estimates:
-
-tlo : 
-- telofinder results plots (.pdf) and summary table (.summary.txt)
 
 ## Issues & Support
 
