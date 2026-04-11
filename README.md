@@ -185,48 +185,27 @@ mamba create -y -n t2tydna \
   gnuplot \
   mummer4=4.0.1
 ```
-
-> ⚠️ IMPORTANT: If you are not instered in telomere length estimates skip this step.
-
-> TeloFinder need to be installed separately on a dirrente env following the instructions:
-
-```
-mamba create -n telofinder python=3.10
+```sh
+mamba create -y -n telofinder \
+  --override-channels \
+  --channel-priority flexible \
+  -c conda-forge -c bioconda \
+  python=3.10 \
+  bedtools \
+  pybedtools=0.9.1
 
 mamba activate telofinder
 
-git clone https://github.com/GillesFischerSorbonne/telofinder.git
+git clone https://github.com/nicolo-tellini/telofinder.git
 
 cd telofinder
-```
-> Before running ```pip install .``` follow the correction here listed at [issue13](https://github.com/GillesFischerSorbonne/telofinder/issues/13#issuecomment-2124729333)
-> From the parental telofinder dir run:
-```
+
 pip install .
+
+conda deactivate
 ```
-
-> By default telomere length estimates are disabled, you can activate it by changing the value of tel_len from "no" to "yes" in the ```./scr/config``` file.
-> Telofinder accumulates pybedtools files on the temp dir consider removing that files at the end of each run. 
-
 > ⚠️ IMPORTANT: If you are not instered in genome phasing skip this step.
 
-```sh
-mamba create -n clair3
-
-mamba activate clair3
-
-mamba install clair3 -c bioconda -c conda-forge
-
-mamba deactivate
-
-mamba create -n hapcut2
-
-mamba activate hapcut2
-
-mamba install hapcut2 -c bioconda -c conda-forge
-
-mamba deactivate
-```
 ### Annotation Step
 
 The annotation process uses **eggNOG-mapper**, which requires a **local database** not included in the repository.  
