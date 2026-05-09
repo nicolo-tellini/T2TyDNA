@@ -125,10 +125,8 @@ mamba create -y -n t2tydna \
   flye=2.9.6 \
   racon=1.5.0 \
   filtlong=0.2.1 \
-  chopper=0.10.0 \
   nanoplot=1.46.0 \
   seqkit=2.10.1 \
-  nanoplot=1.46.0 \
   augustus=3.5.0 \
   gffread=0.12.7 \
   quast=5.3.0 \
@@ -136,7 +134,7 @@ mamba create -y -n t2tydna \
   chopper=0.10.0 \
   bwa=0.7.19 \
   repeatmasker=4.2.1 \
-  emboss=6.6.0\
+  emboss=6.6.0 \
   fasta3=36.3.8 \
   mash=2.3 \
   eggnog-mapper=2.1.13 \
