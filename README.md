@@ -13,12 +13,6 @@ This pipeline is optimized for genome assembly of **Saccharomyces** using Oxford
 This repository is intended for de novo assembly of Saccharomyces strains for which (by default) R10.4 ONT are available.
 Older chemistries require installing the appropriate version of medaka (see Dependencies below), increasing the round of polishing up to 3 and, changing flye settings in ```scr/config```.
 
----
-<details>
-<summary> Old workflow </summary>
-## Workflow
-The pipeline consists of multiple sequential modules to generate a T2T genome assembly, polishing, quality control, telomere length estimation, ORFs identification and functional annotation. 
-
 ```mermaid
 flowchart LR
     ont[/ ONT R10.4 reads /] --> filtering
@@ -32,6 +26,12 @@ flowchart LR
     validation --> annotation
     annotation[[ Annotation ]] --> t2t[/ T2T genome assembly /]
 ```
+
+---
+<details>
+<summary> Old workflow </summary>
+## Workflow
+The pipeline consists of multiple sequential modules to generate a T2T genome assembly, polishing, quality control, telomere length estimation, ORFs identification and functional annotation. 
 
 Below is an overview of each step:
 
