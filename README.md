@@ -18,6 +18,21 @@ Older chemistries require installing the appropriate version of medaka (see Depe
 <summary> Old workflow </summary>
 ## Workflow
 The pipeline consists of multiple sequential modules to generate a T2T genome assembly, polishing, quality control, telomere length estimation, ORFs identification and functional annotation. 
+
+```mermaid
+flowchart LR
+    ont[/ ONT R10.4 reads /] --> filtering
+    ref[/ Saccharomyces reference assemblies /] --> scaffolding
+    filtering[[ Read filtering ]] --> assembly
+    assembly[[ De novo assembly ]] --> polishing
+    polishing[[ Polishing ]] --> scaffolding
+    scaffolding[[ Chromosome naming and orientation ]] --> validation
+    validation[[ Assembly validation ]] --> curation
+    curation[[ Manual curation ]] --> validation
+    validation --> annotation
+    annotation[[ Annotation ]] --> t2t[/ T2T genome assembly /]
+```
+
 Below is an overview of each step:
 
 ### 1. Initialization & Pre-processing
@@ -293,6 +308,179 @@ out:
 
 3 files, 
 
+```
+## Detailed workflow
+
+```mermaid
+flowchart TD
+    %% Input
+    ont[/ ONT reads<br>seq/samplename.fastq.gz /]
+    refs[/ Reference assemblies and GFF3<br>rep/ /]
+    ylr[/ rep/YLR163C.CBS432.fa /]
+    ty[/ rep/Ty.fa /]
+    config[/ scr/config<br>coverage, rounds, genome size, options /]
+ 
+    subgraph init[" INITIALISATION "]
+        initialize[[ initialize: create directories ]]
+    end
+ 
+    config --> initialize
+ 
+    subgraph preprocess[" READ FILTERING "]
+        direction TB
+        chopper[[ chopper: Q 15, length 10 kb ]]
+        filtlong[[ Filtlong: target coverage ]]
+        nanoplot[[ NanoPlot ]]
+        nanoplot_r[[ nanoplot_plot.r: quality vs length ]]
+        chopper --> filtlong
+        filtlong --> nanoplot
+        nanoplot --> nanoplot_r
+    end
+ 
+    ont --> chopper
+    initialize --> chopper
+ 
+    subgraph assemble[" ASSEMBLY "]
+        direction TB
+        flye[[ Flye ]]
+        subgraph asm_eval[" Draft Evaluation "]
+            seqkit[[ SeqKit stats ]]
+            quast[[ QUAST ]]
+            busco[[ BUSCO ]]
+        end
+        flye --> seqkit
+        flye --> quast
+        flye --> busco
+    end
+ 
+    filtlong --> flye
+ 
+    subgraph polish[" POLISHING "]
+        direction TB
+        minimap2_pol[[ minimap2 ]]
+        racon[[ Racon, n rounds ]]
+        medaka[[ medaka_consensus ]]
+        minimap2_pol --> racon
+        racon -- next round --> minimap2_pol
+        racon --> medaka
+    end
+ 
+    flye --> minimap2_pol
+    filtlong --> minimap2_pol
+ 
+    subgraph scaffold[" CHROMOSOME NAMING AND ORIENTATION "]
+        direction TB
+        subgraph refsel[" Reference Selection "]
+            mash[[ mash dist: closest reference ]]
+        end
+ 
+        subgraph centromeres[" Centromere Assignment "]
+            cen_extract[[ samtools faidx: CEN sequences from GFF3 ]]
+            fasta36_cen[[ FASTA36: map centromeres to contigs ]]
+            reorder_scaf[[ reorderscaffolds.r: name contigs by centromere ]]
+            cen_extract --> fasta36_cen
+            fasta36_cen --> reorder_scaf
+        end
+ 
+        subgraph orient[" Orientation "]
+            nucmer_after[[ assessment_after_contigs: NUCmer + mummerplot ]]
+            revcomp[[ revcomp.sh: NUCmer, show-coords, revseq ]]
+            reorder_chr[[ reorderchrs.r ]]
+            nucmer_after --> revcomp
+            revcomp --> reorder_chr
+        end
+ 
+        subgraph chrxii[" Chromosome XII across the rDNA "]
+            fasta36_ylr[[ mapYLR163C.sh: FASTA36 ]]
+            merge_xii[[ attempt_to_merge_chrXII_contigs.r ]]
+            fasta36_ylr --> merge_xii
+        end
+ 
+        mash --> cen_extract
+        reorder_scaf --> nucmer_after
+        reorder_chr --> fasta36_ylr
+    end
+ 
+    medaka --> mash
+    refs --> mash
+    refs --> cen_extract
+    ylr --> fasta36_ylr
+ 
+    subgraph validate[" VALIDATION "]
+        direction TB
+        nucmer_final[[ assessment_reorderedchrs: NUCmer + mummerplot vs reference ]]
+        subgraph backmap[" Backmapping "]
+            minimap2_back[[ minimap2 map-ont ]]
+            bwa_back[[ BWA mem, if short_reads = yes ]]
+            samtools_back[[ samtools sort and index ]]
+            minimap2_back --> samtools_back
+            bwa_back --> samtools_back
+        end
+        curation{ Artefacts? telomeres inside chrs, SNP clusters, coverage drops, clipping }
+        manual[[ manual curation ]]
+        nucmer_final --> curation
+        samtools_back --> curation
+        curation -- yes --> manual
+    end
+ 
+    merge_xii --> nucmer_final
+    merge_xii --> minimap2_back
+    merge_xii --> bwa_back
+    ont --> minimap2_back
+ 
+    subgraph optional[" OPTIONAL MODULES "]
+        direction TB
+        subgraph phasing_box[" Phasing - phasing = yes "]
+            clair3[[ Clair3 ]]
+            bcf_filt[[ bcftools: biallelic SNPs and 1-bp indels, QUAL >= 20 ]]
+            hapcut[[ extractHAIRS + HapCUT2 ]]
+            clair3 --> bcf_filt
+            bcf_filt --> hapcut
+        end
+ 
+        subgraph telo_box[" Telomere Length - tel_len = yes "]
+            telo_reads[[ samtools: reads at chromosome ends ]]
+            telofinder[[ telofinder ]]
+            telo_plot[[ telomer_dist_plot.r ]]
+            telo_reads --> telofinder
+            telofinder --> telo_plot
+        end
+    end
+ 
+    samtools_back --> clair3
+    samtools_back --> telo_reads
+ 
+    subgraph annot[" ANNOTATION "]
+        direction TB
+        repeatmasker[[ RepeatMasker: Ty library, soft-masking ]]
+        augustus[[ AUGUSTUS: species saccharomyces ]]
+        gffread[[ gffread: proteins and CDS ]]
+        emapper[[ eggNOG-mapper ]]
+        cleangff[[ cleangff.r ]]
+        repeatmasker --> augustus
+        augustus --> gffread
+        gffread --> emapper
+        augustus --> cleangff
+    end
+ 
+    merge_xii --> repeatmasker
+    ty --> repeatmasker
+ 
+    subgraph results[" RESULTS "]
+        organizeres[[ organizeres.sh: links into out/ ]]
+    end
+ 
+    cleangff --> organizeres
+    nucmer_final --> organizeres
+ 
+    %% Outputs
+    out_fa[/ out/samplename.genome.fa /]
+    out_pdf[/ out/samplename.genome.pdf<br>mummerplot vs reference /]
+    out_gff[/ out/samplename.gff3 /]
+ 
+    organizeres --> out_fa
+    organizeres --> out_pdf
+    organizeres --> out_gff
 ```
 
 ## Issues & Support
